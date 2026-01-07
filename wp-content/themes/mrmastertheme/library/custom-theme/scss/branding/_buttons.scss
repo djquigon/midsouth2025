@@ -6,17 +6,40 @@ input[type='submit'],
 .button {
     width: auto;
     cursor: pointer;
-    background-color: transparent;
+    background-color: $color_red;
+    padding: 12px 20px;
+    padding-right: 40px;
     border: none;
     border-radius: none;
     box-shadow: none;
     margin: 0;
     padding: 0;
     transform-style: preserve-3d;
+    font-family: 'Open Sans' sans-serif;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    color: $color_white;
+
+    &::after {
+        content: '';
+        background: url() no-repeat center;
+        background-size: contain;
+        width: 14px;
+        height: 14px;
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY(-50%);
+    }
 
     &:hover,
     &:focus {
         //
+        &::after {
+            right: 12px;
+        }
     }
 }
 

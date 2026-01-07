@@ -25,13 +25,19 @@ h6,
 
 h1,
 .h1 {
-    font-size: 36px;
+    color: $color_red;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+
+    font-size: 40px;
 
     @media (min-width: $breakpoint_before_mobile_large) {
-        font-size: 42px;
+        font-size: 48px;
     }
     @media (min-width: $breakpoint_tablet_medium_portrait) {
-        font-size: 54px;
+        font-size: 64px;
     }
 
     //set spacing between bottom of our heading and top of next sibling node:
@@ -62,13 +68,20 @@ h1,
 
 h2,
 .h2 {
-    font-size: 26px;
+    color: $color_black;
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 800;
+    line-height: 58px; /* 134.884% */
+    letter-spacing: -0.86px;
+
+    font-size: 29px;
 
     @media (min-width: $breakpoint_before_mobile_large) {
-        font-size: 32px;
+        font-size: 35px;
     }
     @media (min-width: $breakpoint_tablet_medium_portrait) {
-        font-size: 40px;
+        font-size: 43px;
     }
 
     //set spacing between bottom of our heading and top of next sibling node:
@@ -99,10 +112,15 @@ h2,
 
 h3,
 .h3 {
-    font-size: 22px;
+    color: $color_red;
+    font-family: 'Open Sans';
+    font-size: 27px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 
     @media (min-width: $breakpoint_before_mobile_large) {
-        font-size: 25px;
+        font-size: 30px;
     }
 
     //set spacing between bottom of our heading and top of next sibling node:
@@ -133,7 +151,14 @@ h3,
 
 h4,
 .h4 {
-    font-size: 20px;
+    font-family: 'Open Sans', sans-serif;
+    color: $color-black;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.72px;
+    text-transform: uppercase;
 
     //set spacing between bottom of our heading and top of next sibling node:
     + p,

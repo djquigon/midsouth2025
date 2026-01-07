@@ -1,0 +1,183 @@
+section.project-slider,
+aside.project-slider,
+div.project-slider {
+    //
+
+    div.title-all-button-row a.button {
+        margin: 0 0 0 auto;
+    }
+
+    .slick-track {
+        display: flex;
+        align-items: center;
+    }
+
+    .bottom-row-wrapper {
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 0 5%;
+            padding-top: $global_module_padding_single;
+            .arrows-row {
+                margin: 0;
+                padding: 0;
+                width: fit-content;
+            }
+            .all-button-row {
+                margin: 0;
+                flex: 1;
+                .container {
+                    padding: 0 !important;
+                    justify-content: flex-start !important;
+                }
+            }
+        }
+    }
+
+    .arrows-row {
+        margin-top: 20px;
+        button {
+            &:hover,
+            &:focus {
+                opacity: 0.7;
+            }
+        }
+    }
+
+    .project-list-wrapper {
+        padding-top: $global_module_padding_double;
+        padding-bottom: $global_module_padding_double;
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            padding-top: $global_module_padding_single;
+            padding-bottom: $global_module_padding_single;
+        }
+        position: relative;
+        display: block;
+        &::before {
+            content: '';
+            display: block;
+            width: 1550px;
+            height: 100%;
+            background: rgba(154, 154, 110, 0.22);
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+    }
+
+    .project-slide {
+        position: relative;
+        display: block;
+        overflow: hidden;
+        max-height: 420px;
+
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            height: 300px;
+            figure {
+                height: 100% !important;
+                a {
+                    text-decoration: none;
+                    height: 100% !important;
+                    img {
+                        height: 100% !important;
+                        object-fit: cover;
+                        object-position: center;
+                    }
+                }
+            }
+        }
+
+        figure {
+            display: block;
+            margin: 0;
+            max-height: inherit;
+
+            a {
+                display: block;
+                width: 100%;
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    max-height: inherit;
+                }
+            }
+        }
+
+        .project-content {
+            position: absolute;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: flex-start;
+            padding: 20px;
+            background: linear-gradient(
+                180deg,
+                rgba(19, 29, 65, 0) 0%,
+                rgba(19, 29, 65, 0.43) 24.52%,
+                rgba(19, 29, 65, 0.66) 50.96%,
+                rgba(19, 29, 65, 0.79) 74.04%,
+                rgba(19, 29, 65, 0.79) 93.27%
+            );
+            color: var(--body-text-color, #fff);
+
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                padding-left: 5%;
+                padding-right: 5%;
+            }
+
+            .project-title {
+                margin: 0;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 800;
+                line-height: normal;
+                text-transform: none;
+                color: $color_white;
+                a {
+                    color: var(--headings-color, #fff);
+                    text-decoration: none;
+                }
+            }
+
+            a.view-btn {
+                color: $color_white;
+                font-size: 18px;
+                font-style: normal;
+                font-weight: 800;
+                line-height: normal;
+                text-decoration: none;
+                &::after {
+                    content: '';
+                    display: inline-block;
+                    width: 6px;
+                    height: 12px;
+                    background: url(/wp-content/themes/mrmastertheme/library/custom-theme/images/icons/caret-right.svg)
+                        no-repeat center center;
+                    background-size: cover;
+                    margin-left: 15px;
+                    transition: transform 0.3s ease-in-out;
+                }
+                &:hover::after,
+                &:focus::after {
+                    transform: translateX(10px);
+                }
+            }
+        }
+    }
+
+    //any module-specific adjustments needed for the arrows can be added here if required
+
+    //any module-specific adjustments needed for the dots can be added here if required
+}
