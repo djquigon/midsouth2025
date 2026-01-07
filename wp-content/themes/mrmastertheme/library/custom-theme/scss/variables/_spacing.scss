@@ -1,0 +1,38 @@
+//Margins:
+$global_margin_between_content_rows: 48px;
+$global_margin_between_content_rows_responsive: 32px;
+$global_margin_between_paragraphs: 24px;
+
+//Padding:
+$global_module_padding_double: 64px;
+$global_module_padding_single: 32px;
+
+//Responsive L/R padding for containers
+$global_container_responsive_left_right_padding: 0 5%;
+
+//Space between columns used in a standard flex layout
+$global_gap_between_columns_large: 64px;
+$global_gap_between_columns_medium: 48px;
+$global_gap_between_columns_small: 24px;
+$global_gap_between_columns: $global_gap_between_columns_small;
+
+//Space between rows used in a standard flex layout
+$global_gap_between_rows_large: 64px;
+$global_gap_between_rows_medium: 48px;
+$global_gap_between_rows_small: 24px;
+$global_gap_between_rows: $global_gap_between_rows_small;
+$global_responsive_gap_between_rows: $global_gap_between_rows_small;
+
+//Space between the bottom of various heading tags and the top of the next sibling node:
+$global_h1_bottom_margin: 24px;
+$global_h2_bottom_margin: 16px;
+$global_h3_bottom_margin: 16px;
+$global_h4_bottom_margin: 16px;
+$global_h5_bottom_margin: 16px;
+$global_h6_bottom_margin: 16px;
+
+//Space between paragraphs:
+$global_paragraph_bottom_margin: 24px;
+
+//Space between <ul> & <ol> list items:
+$global_list_item_bottom_margin: 8px;

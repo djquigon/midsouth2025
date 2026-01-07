@@ -1,0 +1,50 @@
+nav#primary-nav ul#menu-primary-navigation li.mega-menu > ul.sub-menu {
+    background-color: #fff;
+    position: fixed;
+    top: rem(var(--header-height-with-adminbar));
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+
+    max-width: 1px;
+    max-height: 1px;
+    overflow: hidden;
+    opacity: 0;
+
+    transition: opacity 0.3s ease-in-out 0.5s, max-height 0.1s linear 0.85s,
+        max-width 0.1s linear 0.85s, padding 0.1s linear 0.85s;
+
+    //each 'column' in the mega-menu:
+    > li {
+        margin-top: 0;
+
+        > a {
+            font-weight: 700;
+
+            > ul.sub-menu {
+                //
+
+                > li {
+                    //
+                }
+            }
+        }
+    }
+}
+
+nav#primary-nav ul#menu-primary-navigation li.mega-menu:hover > ul.sub-menu,
+nav#primary-nav ul#menu-primary-navigation li.mega-menu:focus > ul.sub-menu,
+nav#primary-nav
+    ul#menu-primary-navigation
+    li.mega-menu:focus-within
+    > ul.sub-menu {
+    max-width: 1000px;
+    max-height: 1000px;
+    padding: 32px;
+    opacity: 1;
+
+    transition: opacity 0.3s ease-in-out;
+}

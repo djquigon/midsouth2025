@@ -1,0 +1,372 @@
+*[data-flex='flex'] {
+    display: flex;
+
+    //basic "column-ing" of immediate child elements:
+    &[data-column-count='two'] > * {
+        width: 50%;
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            width: 100%;
+        }
+    }
+
+    &[data-column-count='three'] > * {
+        width: 33.333%;
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            width: 100%;
+        }
+    }
+
+    &[data-column-count='four'] > * {
+        width: 25%;
+
+        @media screen and (max-width: $breakpoint_laptop_small) {
+            width: 50%;
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            width: 100%;
+        }
+    }
+
+    &[data-column-count='five'] > * {
+        width: 20%;
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            width: 100%;
+        }
+    }
+
+    //basic implementation of gaps:
+    &[data-column-gap='small'][data-column-count='two'] {
+        column-gap: $global_gap_between_columns_small;
+
+        > * {
+            width: calc((100% - $global_gap_between_columns_small) / 2);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+
+            > * {
+                width: calc((100% - $global_gap_between_columns) / 2);
+            }
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            > * {
+                width: 100%;
+            }
+        }
+    }
+
+    &[data-column-gap='medium'][data-column-count='two'] {
+        column-gap: $global_gap_between_columns_medium;
+
+        > * {
+            width: calc((100% - $global_gap_between_columns_medium) / 2);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+
+            > * {
+                width: calc((100% - $global_gap_between_columns) / 2);
+            }
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            > * {
+                width: 100%;
+            }
+        }
+    }
+
+    &[data-column-gap='large'][data-column-count='two'] {
+        column-gap: $global_gap_between_columns_large;
+
+        > * {
+            width: calc((100% - $global_gap_between_columns_large) / 2);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+
+            > * {
+                width: calc((100% - $global_gap_between_columns) / 2);
+            }
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            > * {
+                width: 100%;
+            }
+        }
+    }
+
+    &[data-column-gap='small'][data-column-count='three'] {
+        column-gap: $global_gap_between_columns_small;
+
+        > * {
+            width: calc((100% - ($global_gap_between_columns_small * 2)) / 3);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+
+            > * {
+                width: calc((100% - $global_gap_between_columns) / 2);
+            }
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            > * {
+                width: 100%;
+            }
+        }
+    }
+
+    &[data-column-gap='medium'][data-column-count='three'] {
+        column-gap: $global_gap_between_columns_medium;
+
+        > * {
+            width: calc((100% - ($global_gap_between_columns_medium * 2)) / 3);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+
+            > * {
+                width: calc((100% - $global_gap_between_columns) / 2);
+            }
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            > * {
+                width: 100%;
+            }
+        }
+    }
+
+    &[data-column-gap='large'][data-column-count='three'] {
+        column-gap: $global_gap_between_columns_large;
+
+        > * {
+            width: calc((100% - ($global_gap_between_columns_large * 2)) / 3);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+
+            > * {
+                width: calc((100% - $global_gap_between_columns) / 2);
+            }
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            > * {
+                width: 100%;
+            }
+        }
+    }
+
+    &[data-column-gap='small'][data-column-count='four'] {
+        column-gap: $global_gap_between_columns_small;
+
+        > * {
+            width: calc((100% - ($global_gap_between_columns_small * 3)) / 4);
+        }
+
+        @media screen and (max-width: $breakpoint_laptop_small) {
+            > * {
+                width: calc((100% - $global_gap_between_columns_small) / 2);
+            }
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+
+            > * {
+                width: calc((100% - $global_gap_between_columns) / 2);
+            }
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            > * {
+                width: 100%;
+            }
+        }
+    }
+
+    &[data-column-gap='medium'][data-column-count='four'] {
+        column-gap: $global_gap_between_columns_medium;
+
+        > * {
+            width: calc((100% - ($global_gap_between_columns_medium * 3)) / 4);
+        }
+
+        @media screen and (max-width: $breakpoint_laptop_small) {
+            > * {
+                width: calc((100% - $global_gap_between_columns_medium) / 2);
+            }
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+
+            > * {
+                width: calc((100% - $global_gap_between_columns) / 2);
+            }
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            > * {
+                width: 100%;
+            }
+        }
+    }
+
+    &[data-column-gap='large'][data-column-count='four'] {
+        column-gap: $global_gap_between_columns_large;
+
+        > * {
+            width: calc((100% - ($global_gap_between_columns_large * 3)) / 4);
+        }
+
+        @media screen and (max-width: $breakpoint_laptop_small) {
+            > * {
+                width: calc((100% - $global_gap_between_columns_large) / 2);
+            }
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+
+            > * {
+                width: calc((100% - $global_gap_between_columns) / 2);
+            }
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            > * {
+                width: 100%;
+            }
+        }
+    }
+
+    &[data-column-gap='small'][data-column-count='five'] {
+        column-gap: $global_gap_between_columns_small;
+
+        > * {
+            width: calc((100% - ($global_gap_between_columns_small * 4)) / 5);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            > * {
+                width: 100%;
+            }
+        }
+    }
+
+    &[data-column-gap='medium'][data-column-count='five'] {
+        column-gap: $global_gap_between_columns_medium;
+
+        > * {
+            width: calc((100% - ($global_gap_between_columns_medium * 4)) / 5);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            > * {
+                width: 100%;
+            }
+        }
+    }
+
+    &[data-column-gap='large'][data-column-count='five'] {
+        column-gap: $global_gap_between_columns_large;
+
+        > * {
+            width: calc((100% - ($global_gap_between_columns_large * 4)) / 5);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            > * {
+                width: 100%;
+            }
+        }
+    }
+}
+
+*[data-flex-direction='column'] {
+    flex-direction: column;
+}
+
+*[data-flex-direction='column-reverse'] {
+    flex-direction: column-reverse;
+}
+
+*[data-flex-direction='row-reverse'] {
+    flex-direction: row-reverse;
+}
+
+*[data-flex-wrap='wrap'] {
+    flex-wrap: wrap;
+}
+
+*[data-justify-content='space-between'] {
+    justify-content: space-between;
+}
+
+*[data-justify-content='center'] {
+    justify-content: center;
+}
+
+*[data-align-items='center'] {
+    align-items: center;
+}
+
+*[data-align-items='flex-end'] {
+    align-items: flex-end;
+}
+
+*[data-column-gap='small'] {
+    column-gap: $global_gap_between_columns_small;
+}
+
+*[data-column-gap='medium'] {
+    column-gap: $global_gap_between_columns_medium;
+}
+
+*[data-column-gap='large'] {
+    column-gap: $global_gap_between_columns_large;
+
+    @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+        column-gap: $global_gap_between_columns;
+    }
+}
+
+*[data-row-gap='small'] {
+    row-gap: $global_gap_between_rows_small;
+}
+
+*[data-row-gap='medium'] {
+    row-gap: $global_gap_between_rows_medium;
+}
+
+*[data-row-gap='large'] {
+    row-gap: $global_gap_between_rows_large;
+}

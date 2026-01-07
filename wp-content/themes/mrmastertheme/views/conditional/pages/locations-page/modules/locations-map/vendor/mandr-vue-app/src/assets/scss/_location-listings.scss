@@ -1,0 +1,78 @@
+section#locations-map ul#location-listings {
+    position: relative;
+    height: 400px;
+    overflow-y: scroll;
+
+    li.location-listing {
+        margin: 0;
+        padding: 24px 16px 24px 32px;
+        border-bottom: solid 2px;
+
+        &[data-active='true'] {
+            //background-color: peachpuff;
+        }
+
+        h3.listing-name + span {
+            margin-top: 16px;
+        }
+
+        button.toggle-trigger {
+            margin: 0 0;
+            padding: 0 64px 0 0;
+            background-color: transparent;
+            border: none;
+            display: block;
+            width: 100%;
+            text-align: left;
+            position: relative;
+
+            &:after {
+                content: '+';
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 48px;
+                height: 48px;
+                text-align: right;
+                pointer-events: none;
+            }
+
+            &[aria-expanded='true']:after {
+                content: '-';
+                font-size: 40px;
+                line-height: 0.5;
+            }
+        }
+
+        span {
+            display: block;
+
+            + span {
+                margin-top: 16px;
+            }
+        }
+
+        ul.listing-info-toggle {
+            position: relative;
+
+            + span {
+                margin-top: 16px;
+            }
+
+            &[aria-hidden='true'] {
+                margin: 0;
+                max-height: 1px;
+                overflow: hidden;
+                opacity: 0;
+            }
+
+            li.hours > span.label + span {
+                margin-top: 0;
+            }
+        }
+    }
+
+    li.no-results {
+        padding: 24px 32px;
+    }
+}

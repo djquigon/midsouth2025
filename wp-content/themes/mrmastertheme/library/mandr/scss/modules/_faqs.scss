@@ -1,0 +1,30 @@
+article > section.faqs,
+article > div.faqs,
+article > aside.faqs {
+    //
+
+    dl.faqs-list div.toggle {
+        padding: $global_gap_between_rows_small 0;
+        border-bottom: solid 2px $color_grey_border_dark_mandr;
+
+        &:first-of-type {
+            border-top: solid 2px $color_grey_border_dark_mandr;
+        }
+
+        dt.question h3 {
+            color: $color_grey_med_mandr;
+            font-weight: 700;
+
+            button.toggle-trigger span.icon {
+                border: solid 2px $color_yellow_mandr;
+                border-radius: 50%;
+                padding: 14px;
+                transform: translateY(-5px);
+            }
+        }
+
+        &:has(button.toggle-trigger[aria-expanded='true']) dd.answer {
+            padding-top: $global_gap_between_rows_small;
+        }
+    }
+}

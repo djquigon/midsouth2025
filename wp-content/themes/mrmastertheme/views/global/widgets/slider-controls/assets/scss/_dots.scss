@@ -1,0 +1,53 @@
+//any GLOBAL adjustments needed for the dots will be made here:
+div[id*='append-dots'] {
+    //
+
+    ul.slick-dots > li {
+        display: inline-block;
+        margin-top: 0; //to counter-act our default list styling
+
+        button {
+            color: transparent;
+            display: block;
+            width: 24px;
+            height: 24px;
+            overflow: hidden;
+            padding: 0;
+            border: none;
+            background-color: black;
+
+            &:hover,
+            &:focus {
+                background-color: grey;
+            }
+        }
+
+        &.slick-active > button {
+            background-color: grey;
+        }
+    }
+
+    &:has(*[class*='-settings'][data-dots-position='left']) {
+        //
+
+        ul.slick-dots > li {
+            margin-right: 12px;
+        }
+    }
+
+    &:has(*[class*='-settings'][data-dots-position='right']) {
+        text-align: right;
+
+        ul.slick-dots > li {
+            margin-left: 12px;
+        }
+    }
+
+    &:has(*[class*='-settings'][data-dots-position='center']) {
+        text-align: center;
+
+        ul.slick-dots > li {
+            margin: 0 6px;
+        }
+    }
+}

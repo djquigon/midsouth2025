@@ -1,0 +1,71 @@
+button.button,
+button.content-limiter-expander,
+input[type='button'],
+input[type='reset'],
+input[type='submit'],
+.button {
+    width: auto;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: none;
+    box-shadow: none;
+    margin: 0;
+    padding: 0;
+    transform-style: preserve-3d;
+
+    &:hover,
+    &:focus {
+        //
+    }
+}
+
+.button {
+    display: inline-block;
+
+    &--clear {
+        background: transparent;
+        border: none;
+        padding: 0;
+    }
+}
+
+.center-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+p.centered-button {
+    text-align: center;
+}
+
+// Hide button mobile text on desktops
+.mobile-text {
+    display: none;
+
+    @media (max-width: $breakpoint_tablet_medium_portrait) {
+        display: block;
+    }
+}
+
+// Hide button desktop text on mobile
+.mobile-text + .text-wrap {
+    @media (max-width: $breakpoint_tablet_medium_portrait) {
+        display: none;
+    }
+}
+
+/* Typographical Transitions
+--------------------------------------------- */
+
+a,
+button,
+input:focus,
+input[type='button'],
+input[type='reset'],
+input[type='submit'],
+textarea:focus,
+.button {
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+}

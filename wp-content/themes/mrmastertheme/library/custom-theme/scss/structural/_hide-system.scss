@@ -1,0 +1,23 @@
+//it's necessary to have the selections be this way, so that the media queries will override any styles that are applied to a class/id, without using '!important'
+
+//hidden on desktop, visible on mobile:
+*[data-desktop-hide='true'],
+*[id][data-desktop-hide='true'],
+*[class][data-desktop-hide='true'],
+*[id][class][data-desktop-hide='true'] {
+    display: none;
+
+    @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+        display: block;
+    }
+}
+
+//visible on desktop, hidden on mobile:
+*[data-mobile-hide='true'],
+*[id][data-mobile-hide='true'],
+*[class][data-mobile-hide='true'],
+*[id][class][data-mobile-hide='true'] {
+    @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+        display: none;
+    }
+}

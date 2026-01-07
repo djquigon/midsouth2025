@@ -1,0 +1,7 @@
+body.not-home header.title-area {
+    //maybe you need to set global styles for secondary page title area(s):
+
+    h1 + div.intro-content {
+        margin-top: $global_h1_bottom_margin;
+    }
+}

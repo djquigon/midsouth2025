@@ -1,0 +1,49 @@
+//if any of the text color variables are set via a PHP template file, we apply them to the appropriate child elements:
+*[style*='--headings-color'] {
+    //
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6 {
+        color: var(--headings-color);
+    }
+}
+
+*[style*='--body-text-color'] {
+    //
+
+    p,
+    ol li,
+    ul li,
+    blockquote,
+    caption {
+        color: var(--body-text-color);
+    }
+}
+
+*[style*='--link-color'] {
+    //
+
+    //We only want to target <a> tags that don't have a class applied. For example, .button
+    a:not([class]) {
+        color: var(--link-color);
+    }
+}
+
+*[style*='--link-hover-color'] {
+    //
+
+    a:not([class]):hover,
+    a:not([class]):focus {
+        color: var(--link-hover-color);
+    }
+}

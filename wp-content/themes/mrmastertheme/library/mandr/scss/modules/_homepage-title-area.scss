@@ -1,0 +1,52 @@
+body.home
+    header.title-area:not([data-slider-type='slide-images-static-content'])
+    div.content-row
+    div.content,
+body.page-category-secondary-homepage
+    header.title-area:not([data-slider-type='slide-images-static-content'])
+    div.content-row
+    div.content,
+body.home
+    header.title-area:not([data-slider-type='slide-images-static-content'])
+    .content-slide
+    .content,
+body.page-category-secondary-homepage
+    header.title-area:not([data-slider-type='slide-images-static-content'])
+    .content-slide
+    .content {
+    background-color: #fff;
+    padding: $global_module_padding_double;
+    width: 100%;
+    max-width: 600px;
+    border-bottom: solid 12px $color_yellow_mandr;
+}
+
+body.home
+    header.title-area[data-slider-type='slide-images-and-content']
+    .content-slide
+    .content,
+body.page-category-secondary-homepage
+    header.title-area[data-slider-type='slide-images-and-content']
+    .content-slide
+    .content {
+    max-width: 100%;
+}
+
+body.page-category-secondary-homepage header.title-area ul.slick-dots > li {
+    //
+
+    button {
+        width: 64px;
+        height: 12px;
+        background-color: #fff;
+
+        &:hover,
+        &:focus {
+            background-color: $color_teal_mandr;
+        }
+    }
+
+    &.slick-active > button {
+        background-color: $color_teal_mandr;
+    }
+}

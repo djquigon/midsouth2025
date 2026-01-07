@@ -1,0 +1,57 @@
+//Helpful converter link: http://www.w3schools.com/tags/ref_pxtoemconversion.asp
+
+//Resolution statistic sources:
+// https://gs.statcounter.com/screen-resolution-stats
+// https://www.w3schools.com/browsers/browsers_display.asp
+// https://www.ios-resolution.com/
+
+//According to the stats, the most common resolutions, ordered by size and not popularity:
+// 2560 X 1440
+// 1920 X 1080
+// 1536 X 864 (people using 125% zoom setting on a 1920px screen, VERY common)
+// 1440 X 900
+// 1366 X 768
+// 1280 X 720
+// 1280 X 800 (big tablet, landscape orientation)
+// 1024 X 768 (either VERY old computers or medium tablet landscape orientation)
+// 768 X 1024
+// 430 X 932 (various iPhone 'Pro', 'Plus', & 'Max' models)
+// 390 X 844 (iPhone 12, 13, & 14)
+// 375 X 667 || 375 X 812 (iPhone 11, SE, 12 mini, & 13 mini)
+// 360 X 800 (likely, alot of current Androids)
+// 320 X 480 || 320 X 568 (older, smaller Androids)
+
+//To use MAX-width in a media query, every number inside em() is 1px HIGHER than the target screen width
+//To use MIN-width in a media query, every number inside em() is 1px LOWER than the target screen width
+
+//Desktop breakpoints:
+$breakpoint_desktop_large: em(2561);
+$breakpoint_desktop_standard: em(1921);
+$breakpoint_desktop_standard_zoomed: em(1537);
+$breakpoint_desktop_ancient: em(1025);
+
+//Laptop breakpoints:
+$breakpoint_laptop_large: em(1441);
+$breakpoint_laptop_medium: em(1367);
+$breakpoint_laptop_small: em(1281);
+
+//Tablet breakpoints:
+$breakpoint_tablet_large_landscape: em(1281);
+$breakpoint_tablet_large_portrait: em(801);
+$breakpoint_tablet_medium_landscape: em(1025);
+$breakpoint_tablet_medium_portrait: em(769);
+
+//Mobile breakpoints:
+$breakpoint_mobile_iphone_large: em(431);
+$breakpoint_mobile_iphone_standard: em(391);
+$breakpoint_mobile_iphone_small: em(376);
+$breakpoint_mobile_android_standard: em(361);
+$breakpoint_mobile_android_small: em(321);
+
+//You'll probably need exceptions like these, and they'll likely change for each site:
+$breakpoint_before_desktop_large: em(2201);
+$breakpoint_before_tablet: em(900);
+$breakpoint_before_mobile_large: em(650);
+$breakpoint_before_mobile_small: em(479);
+
+$breakpoint_wordpress_adminbar_mobile: em(782);

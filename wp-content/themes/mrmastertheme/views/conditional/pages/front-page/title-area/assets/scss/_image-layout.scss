@@ -1,0 +1,9 @@
+body.home header.title-area[data-background-type='image'],
+body.page-category-secondary-homepage
+    header.title-area[data-background-type='image'] {
+    //
+
+    div.content-row {
+        z-index: 2;
+    }
+}

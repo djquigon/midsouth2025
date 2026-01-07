@@ -1,0 +1,34 @@
+#header {
+    background-color: #fff;
+    box-shadow: 0 0 10px grey;
+    position: static;
+    //to take care of a specific styling 'bug', we apply fixed positioning with JavaScript at the exact moment we apply a top margin to the <main>
+    z-index: 250;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    text-align: center;
+
+    transition: opacity 0.3s linear, transform 0.3s linear;
+}
+
+body.admin-bar #header {
+    top: 32px;
+
+    @media screen and (max-width: 782px) {
+        top: 46px;
+    }
+}
+
+body.scrolling-down:not(.nav-active) #header {
+    transform: translateY(-400px);
+    opacity: 0;
+
+    &.transition-done {
+        visibility: hidden;
+        #primary-nav {
+            visibility: hidden;
+        }
+    }
+}

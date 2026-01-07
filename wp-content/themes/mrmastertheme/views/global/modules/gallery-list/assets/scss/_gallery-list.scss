@@ -1,0 +1,15 @@
+section.gallery-list,
+aside.gallery-list,
+div.gallery-list {
+    //
+
+    div.title-all-button-row a.button {
+        margin: 0 0 0 auto;
+    }
+}
+
+@import 'gallery-list-masonry';
+@import 'gallery-list-cards';
+@import 'gallery-list-carousel';
+@import 'gallery-list-full-width';
+@import 'gallery-list-featured';

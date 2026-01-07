@@ -1,0 +1,87 @@
+section.locations-map-cards,
+div.locations-map-cards,
+aside.locations-map-cards {
+    //
+
+    #map-module {
+        //
+
+        li.location-name > h2.h3 {
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        li > a:not(.button) {
+            color: $color_grey_dark_mandr;
+
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    a.button.all-locations {
+        border: none;
+        background-color: $color_yellow_mandr;
+        text-align: center;
+
+        &:hover,
+        &:focus {
+            background-color: $color_grey_dark_mandr;
+            color: #fff;
+        }
+    }
+
+    ul.cards-list li {
+        //
+
+        h3 {
+            text-transform: uppercase;
+            font-weight: 700;
+        }
+
+        a,
+        span,
+        p {
+            margin-top: $global_list_item_bottom_margin;
+        }
+
+        a {
+            color: $color_grey_dark_mandr;
+
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+
+        span.permalink > a {
+            position: relative;
+            text-transform: uppercase;
+
+            &:after {
+                content: '';
+                position: absolute;
+                top: 100%;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 100%;
+                height: 5px;
+                background-color: $color_yellow_mandr;
+                opacity: 0;
+
+                transition: opacity $global_transition_duration;
+            }
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+
+                &:after {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

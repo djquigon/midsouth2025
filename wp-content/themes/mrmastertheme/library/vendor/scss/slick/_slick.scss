@@ -1,0 +1,118 @@
+//Slider
+.slick-slider {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    user-select: none;
+    -webkit-touch-callout: none;
+    touch-action: pan-y;
+    -webkit-tap-highlight-color: transparent;
+}
+.slick-list {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+}
+.slick-list.dragging {
+    cursor: pointer;
+    cursor: hand;
+}
+.slick-slider .slick-track,
+.slick-slider .slick-list {
+    transform: translate3d(0, 0, 0);
+}
+.slick-track {
+    position: relative;
+    top: 0;
+    left: 0;
+    display: block;
+}
+.slick-track:before,
+.slick-track:after {
+    display: table;
+    content: '';
+}
+.slick-track:after {
+    clear: both;
+}
+.slick-loading .slick-track {
+    visibility: hidden;
+}
+.slick-slide {
+    display: none;
+    float: left;
+    height: auto;
+    min-height: 1px;
+}
+[dir='rtl'] .slick-slide {
+    float: right;
+}
+.slick-slide img {
+    display: block;
+}
+.slick-slide.slick-loading img {
+    display: none;
+}
+.slick-slide.dragging img {
+    pointer-events: none;
+}
+.slick-initialized .slick-slide {
+    display: block;
+}
+.slick-loading .slick-slide {
+    visibility: hidden;
+}
+.slick-vertical .slick-slide {
+    display: block;
+    height: auto;
+    border: 1px solid transparent;
+}
+.slick-arrow.slick-hidden {
+    display: none;
+}
+
+//M&R Addition(s):
+
+//We typically want to be able to control the spacing between multiple slides on a row, while also ensuring that left and right edges of the first & last slide (respectively) are flush with the left & right ends of the div.container that is holding the slider:
+$global_gap_between_slides: 32px;
+
+.slick-slide {
+    margin: 0 calc($global_gap_between_slides / 2);
+
+    @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+        margin: 0;
+    }
+}
+.slick-list {
+    margin: 0 calc($global_gap_between_slides / 2) * -1;
+
+    @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+        margin: 0;
+    }
+}
+
+//This causes an overflow issue which requires this override:
+main > article:has(.slick-list) {
+    overflow-x: hidden;
+
+    //There's also an overflow bug with the padding system if the module features a slider and 0 top/bottom padding:
+    > section:has(span.padding[data-top-padding-desktop='none']),
+    > div:has(span.padding[data-top-padding-desktop='none']),
+    > aside:has(span.padding[data-top-padding-desktop='none']),
+    > section:has(span.padding[data-padding-top-desktop='none']),
+    > div:has(span.padding[data-padding-top-desktop='none']),
+    > aside:has(span.padding[data-padding-top-desktop='none']) {
+        padding-top: 1px;
+    }
+
+    > section:has(span.padding[data-bottom-padding-desktop='none']),
+    > div:has(span.padding[data-bottom-padding-desktop='none']),
+    > aside:has(span.padding[data-bottom-padding-desktop='none']),
+    > section:has(span.padding[data-padding-bottom-desktop='none']),
+    > div:has(span.padding[data-padding-bottom-desktop='none']),
+    > aside:has(span.padding[data-padding-bottom-desktop='none']) {
+        padding-bottom: 1px;
+    }
+}

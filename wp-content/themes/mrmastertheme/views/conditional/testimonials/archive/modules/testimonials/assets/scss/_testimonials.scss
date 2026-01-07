@@ -1,0 +1,28 @@
+.testimonials {
+    .testimonials-list {
+        &[data-layout='masonry'] {
+            column-count: 3;
+            column-gap: $global_gap_between_columns_small;
+
+            @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                column-count: 2;
+            }
+
+            @media screen and (max-width: $breakpoint_before_mobile_large) {
+                column-count: 1;
+            }
+        }
+        li {
+        }
+        .testimonial-video-thumbnail {
+            .play-hover {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                width: auto;
+                height: auto;
+            }
+        }
+    }
+}

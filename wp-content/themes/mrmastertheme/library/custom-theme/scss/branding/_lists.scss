@@ -1,0 +1,60 @@
+ul li + li,
+ol li + li {
+    margin-top: $global_list_item_bottom_margin;
+}
+
+//margin exception for lists using our flex & grid systems:
+ul[data-flex='flex'] li,
+ol[data-flex='flex'] li,
+ul[data-grid='grid'] li,
+ol[data-grid='grid'] li {
+    margin: 0;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding-left: 0;
+}
+
+ul:not([class]) {
+    li:not([class]) {
+        position: relative;
+        list-style-type: none;
+        padding-left: 20px;
+
+        &:before {
+            content: '';
+            background-color: $color_black;
+            position: absolute;
+            display: inline-block;
+            top: 12px;
+            left: 0;
+
+            width: 5px;
+            height: 5px;
+            line-height: 0;
+            text-indent: 0;
+        }
+    }
+
+    + p,
+    + ol,
+    + ul,
+    + address,
+    + h2,
+    + .h2,
+    + h3,
+    + .h3,
+    + h4,
+    + .h4,
+    + h5,
+    + .h5,
+    + h6,
+    + .h6,
+    + a,
+    + a.button,
+    + img {
+        margin-top: $global_paragraph_bottom_margin;
+    }
+}

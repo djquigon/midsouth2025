@@ -1,0 +1,25 @@
+nav.post-pagination {
+    text-align: right;
+
+    ul.page-numbers {
+        display: inline-flex;
+        justify-content: space-between;
+        column-gap: 12px;
+
+        li {
+            margin: 0;
+
+            a {
+                //
+
+                &.prev {
+                    //
+                }
+
+                &.next {
+                    //
+                }
+            }
+        }
+    }
+}

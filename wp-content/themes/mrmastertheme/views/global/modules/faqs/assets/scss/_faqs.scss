@@ -1,0 +1,16 @@
+section.faqs ,
+aside.faqs ,
+div.faqs {    
+    //push the 'View All' button to the right (desktop view)
+    div.title-view-all-row .container a.button {
+        margin: 0 0 0 auto;
+    }
+
+    &[data-layout="toggles"] {
+        //
+    }
+
+    &[data-layout="cards"] {
+        //
+    }
+}

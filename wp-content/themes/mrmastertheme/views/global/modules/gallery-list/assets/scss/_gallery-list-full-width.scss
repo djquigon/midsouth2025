@@ -1,0 +1,79 @@
+section.gallery-list[data-layout='full-width'],
+aside.gallery-list[data-layout='full-width'],
+div.gallery-list[data-layout='full-width'] {
+    //With this slider design, you may want to remove any spacing between slides:
+    .slick-list,
+    .slick-slide {
+        margin: 0;
+    }
+
+    .slick-slide {
+        position: relative;
+        height: 400px;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $color_black;
+            z-index: 2;
+            opacity: 0;
+
+            transition: opacity $global_transition_duration ease-in-out;
+        }
+
+        &:hover,
+        &:focus-within {
+            &:before {
+                opacity: 0.7;
+            }
+
+            span.text {
+                opacity: 1;
+            }
+        }
+
+        figure {
+            height: 100%;
+            width: 100%;
+            display: block;
+            top: 0;
+            transform: none;
+            opacity: 1;
+
+            img {
+                display: block;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+
+        span.text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            padding: $global_paragraph_bottom_margin;
+            z-index: 3;
+
+            opacity: 0;
+
+            transition: opacity $global_transition_duration ease-in-out;
+        }
+    }
+
+    //any module-specific adjustments needed for the arrows will be made here:
+    div[id*='append-arrows'] {
+        width: calc(100% - 64px);
+    }
+
+    //any module-specific adjustments needed for the dots will be made here:
+    div[id*='append-dots'] {
+        //
+    }
+}

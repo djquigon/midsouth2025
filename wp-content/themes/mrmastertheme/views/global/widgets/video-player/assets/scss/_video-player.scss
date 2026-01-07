@@ -1,0 +1,73 @@
+//We're using vendor JavaScript & CSS (magnific.me) to handle the structure & functionality of the modal video lightbox. You shouldn't ever need to adjust them, but for reference, here are the relevant files:
+
+// library\vendor\js\magnific\magnific.js
+// library\vendor\scss\magnific\_magnific.scss
+
+//Ideally, you're just using this file to make branding/cosmetic adjustments on a site by site basis:
+a.popup-video:not(.button) {
+    background-color: $color_black;
+    display: block;
+    position: relative;
+
+    &:hover,
+    &:focus {
+        .play-icon:before {
+            opacity: 0.6;
+        }
+    }
+
+    img.poster-image {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        object-fit: cover;
+        object-position: center;
+    }
+
+    .play-icon {
+        display: block;
+        position: absolute;
+        color: transparent;
+        overflow: hidden;
+        z-index: 2;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $color_black;
+            z-index: 1;
+
+            opacity: 0.8;
+
+            transition: all $global_transition_duration ease-out;
+        }
+
+        &:after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 72px;
+            height: 72px;
+            background-image: url('views/global/widgets/video-player/assets/images/icons/play-icon.svg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            z-index: 2;
+        }
+
+        //This may be overkill, & forgive how 'hacky' this is, but only we need span.play-icon to have pointer events, but we want to prevent any of its child elements from having them. We also want to ensure that the description text isn't visible
+        * {
+            pointer-events: none;
+            color: transparent;
+        }
+    }
+}

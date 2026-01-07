@@ -1,0 +1,112 @@
+//any GLOBAL adjustments needed for the arrows will be made here:
+div[id*='append-arrows'] {
+    //
+
+    button.slick-arrow {
+        position: relative;
+        border: none;
+        background-color: transparent;
+        padding: 0;
+        margin: 0;
+        color: transparent;
+        width: 32px;
+        height: 32px;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            pointer-events: none;
+        }
+
+        &:hover,
+        &:focus {
+            //
+        }
+
+        &.slick-prev:before {
+            background-image: url('library/custom-theme/images/icons/chevron-left.svg');
+        }
+
+        &.slick-next:before {
+            background-image: url('library/custom-theme/images/icons/chevron-right.svg');
+        }
+    }
+
+    &:has(*[class*='-settings'][data-arrows-position='left']) {
+        //default state, so probably don't need anything here
+    }
+
+    &:has(*[class*='-settings'][data-arrows-position='right']) {
+        text-align: right;
+    }
+
+    &:has(*[class*='-settings'][data-arrows-position='center']) {
+        text-align: center;
+    }
+
+    //this arrow position option's absolute positioning makes the placement of the HTML a key factor, so that it can be influenced by a relative positioned element
+    &:has(*[class*='-settings'][data-arrows-position='edges']) {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        display: flex;
+        justify-content: space-between;
+        pointer-events: none;
+        z-index: 3;
+
+        button.slick-prev {
+            pointer-events: all;
+            transform: translateX(-100%);
+        }
+
+        button.slick-next {
+            pointer-events: all;
+            transform: translateX(100%);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            //There's a super annoying bug with slick.js: if slick's 'Responsive' settings are enabled, the position of .slick-list in the DOM will change at the first breakpoint you set in the 'Responsive' settings. This will cause the slick arrows element to be positioned ABOVE the slider in the DOM instead of where we tend to want it at this point (below).
+            top: 100%;
+            transform: translateX(-50%);
+            display: block;
+            text-align: center; //or left, right, whatever fits best
+
+            //since we're absolute positioning the arrows instead of relative, add some additional spacing below .slick-list
+            & + .slick-list,
+            & + * + .slick-list //this selection is only here if there's another sibling element between the #append-arrows div and .slick-list after the DOM adjustment
+            {
+                padding-bottom: $global_margin_between_content_rows_responsive;
+                margin-bottom: $global_margin_between_content_rows_responsive;
+            }
+
+            button.slick-prev,
+            button.slick-next {
+                transform: none;
+            }
+        }
+    }
+}
+
+//An additional CSS rule to address another scenario presented by the slick.js 'Responsive' bug described above: if you have a slider that doesn't use any slick.js 'Responsive' settings, the DOM will never be manipulated, which affects how we treat any slick arrows that are using the 'edges' positioning option
+@media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+    .slick-slider
+        > .slick-list
+        + div[id*='append-arrows']:has(
+            *[class*='-settings'][data-arrows-position='edges']
+        ) {
+        position: relative;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-top: $global_margin_between_content_rows_responsive;
+    }
+}

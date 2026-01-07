@@ -1,0 +1,21 @@
+section#locations-map #location-search-form {
+    padding: 24px 32px;
+
+    ul.form-fields li.form-heading h2 {
+        @extend .h3;
+    }
+
+    ul.form-fields li.find-nearest label {
+        display: block;
+        padding-bottom: 24px;
+    }
+
+    ul.form-fields li.search-by-string input {
+        display: block;
+        width: 100%;
+    }
+
+    ul.form-fields li.search-by-string button#clear-search {
+        margin-left: 16px;
+    }
+}

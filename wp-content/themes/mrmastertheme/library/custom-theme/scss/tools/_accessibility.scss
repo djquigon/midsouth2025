@@ -1,0 +1,60 @@
+//apply these classes to anything you need to hide visually, but should still be able to be picked up screenreaders
+.screenreader-only,
+.sr-only,
+.visually-hidden,
+*[data-visually-hidden='true'] {
+    position: absolute !important;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+//we can't have empty tags lingering on the site, so we just hide the text:
+span.validator-text {
+    visibility: hidden;
+    color: transparent;
+    pointer-events: none;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    opacity: 0;
+}
+
+// Skip to content link
+a.skip-content {
+    background-color: #ebebeb;
+    color: #000;
+    display: block;
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    padding: 12px;
+    opacity: 0;
+
+    font-size: 25px;
+    font-weight: 700;
+    text-align: center;
+
+    &:focus {
+        color: #000;
+        z-index: 500;
+        opacity: 1;
+        clip: initial;
+        outline: solid 2px;
+        top: 100%;
+    }
+}
+
+// hide non-keyboard focus styles
+.js-focus-visible :focus:not(.focus-visible) {
+    outline: none;
+}

@@ -1,0 +1,30 @@
+//em size
+$doc-font-size: 16;
+@function em($size) {
+    @return #{calc($size / $doc-font-size)}em;
+}
+
+//Utility function to return the relevant colour depending on what type of arrow it is
+@function setTriangleColor($direction, $side, $color) {
+    @if $direction ==
+        'left' and
+        $side ==
+        'right' or
+        $direction ==
+        'right' and
+        $side ==
+        'left' or
+        $direction ==
+        'down' and
+        $side ==
+        'top' or
+        $direction ==
+        'up' and
+        $side ==
+        'bottom'
+    {
+        @return $color;
+    } @else {
+        @return 'transparent';
+    }
+}

@@ -1,0 +1,126 @@
+section.testimonials,
+aside.testimonials,
+div.testimonials {
+    //
+
+    &[data-layout='slider'] {
+        //
+
+        div.title-all-button-row a.button {
+            margin: 0 0 0 auto;
+        }
+
+        div.intro-content-row {
+            //
+        }
+
+        //any adjustments to the slider or slides themselves will be made here:
+        div.testimonial-slider-row {
+            //
+
+            div.testimonial-slide {
+                //
+
+                div.content {
+                    //
+                }
+
+                div.author {
+                    font-weight: 700;
+                    font-style: italic;
+
+                    span.title {
+                        position: relative;
+                        padding-left: 16px;
+
+                        &:before {
+                            content: '|';
+                            position: absolute;
+                            left: 2px;
+                            top: -2px;
+                        }
+                    }
+                }
+            }
+        }
+
+        //any module-specific adjustments needed for the arrows will be made here:
+        div[id*='append-arrows'] {
+            //
+        }
+
+        //any module-specific adjustments needed for the dots will be made here:
+        div[id*='append-dots'] {
+            //
+        }
+    }
+
+    &[data-layout='columns'] {
+        //
+
+        /* 
+        //example of an exception that we would place in this file:
+
+        //here's the scenario: we're building a site that has consistent spacing between columns on every module EXCEPT the testimonials module. 
+
+        //let's pretend that on this imaginary site we're building, we know for sure that the testimonials module will always be a 3-column layout.
+
+        //we use the testimonials class to make a specific selection, then use new variables to adjust the -gap rules and column widths, but specifically for the 3-column layout option        
+        div.testimonials-row:has(span.row-settings[data-column-count="three"]) div.columns {
+            $testimonial_gap_between_columns : 64px;
+            $testimonial_gap_between_rows : 64px;
+
+            column-gap: $testimonial_gap_between_columns;
+            row-gap: $testimonial_gap_between_rows;
+
+            div.column {
+                width: calc(33.33% - calc($testimonial_gap_between_columns / 1.5));
+            }
+
+            //however, because we've just made this adjustment, we will also need responsive rules to target this particular section
+
+            //to do this, I just went to the global column system scss file and copy/pasted
+
+            @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                justify-content: center;
+
+                > div.column {
+                    width: calc(50% - calc($testimonial_gap_between_rows / 2)); 
+                }                
+            }
+
+            //then later default to full-width to match other columned layouts
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                > div.column {
+                    width: 100%;
+                }
+            }
+        }
+        */
+
+        div.testimonial {
+            //
+
+            div.content {
+                //
+            }
+
+            div.author {
+                font-weight: 700;
+                font-style: italic;
+
+                span.title {
+                    position: relative;
+                    padding-left: 16px;
+
+                    &:before {
+                        content: '|';
+                        position: absolute;
+                        left: 2px;
+                        top: -2px;
+                    }
+                }
+            }
+        }
+    }
+}

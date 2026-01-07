@@ -1,0 +1,88 @@
+dl div.toggle {
+    //.toggle class name is required for this SCSS to be applied. <dt> tags MUST be used inside a <dl>, even if there's just one <dt>
+
+    > dt {
+        position: relative;
+
+        //.toggle-trigger class applied to the <button> is essential for the toggle JavaScript to work
+        button.toggle-trigger {
+            position: relative;
+            background: transparent;
+            border: none;
+            color: inherit;
+            display: block;
+            margin: 0;
+            padding: 0 36px 0 0;
+            width: 100%;
+            text-align: left;
+
+            > span.icon {
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 24px;
+                height: 24px;
+                pointer-events: none;
+
+                &:before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-image: url('library/custom-theme/images/icons/sub-menu-toggle-open.svg');
+                    background-position: center;
+                    background-size: 24px;
+                    background-repeat: no-repeat;
+                    pointer-events: none;
+
+                    opacity: 1;
+                }
+
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background-image: url('library/custom-theme/images/icons/sub-menu-toggle-close.svg');
+                    background-position: center;
+                    background-size: 24px;
+                    background-repeat: no-repeat;
+                    pointer-events: none;
+
+                    opacity: 0;
+                }
+            }
+
+            &[aria-expanded='true'] > span.icon:before {
+                opacity: 0;
+            }
+
+            &[aria-expanded='true'] > span.icon:after {
+                opacity: 1;
+            }
+        }
+    }
+
+    > dd {
+        display: block;
+        max-height: 0px;
+        overflow: hidden;
+        opacity: 0;
+        visibility: hidden;
+
+        &[aria-hidden='false'] {
+            max-height: 10000px;
+            opacity: 1;
+            visibility: visible;
+        }
+    }
+
+    &[aria-hidden='true'] {
+        //for any toggle that's being used in conjunction with a Category filter form (like FAQs), we want to completely hide the FAQ from the DOM when appropriate:
+        display: none;
+    }
+}

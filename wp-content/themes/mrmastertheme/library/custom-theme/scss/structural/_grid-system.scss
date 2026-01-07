@@ -1,0 +1,535 @@
+*[data-grid='grid'] {
+    display: grid;
+
+    //basic "column-ing" of immediate child elements:
+    &[data-column-count='two'] {
+        grid-template-columns: repeat(2, 1fr);
+
+        @media screen and (max-width: $breakpoint_before_mobile_small) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &[data-column-count='three'] {
+        grid-template-columns: repeat(3, 1fr);
+
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: $breakpoint_before_mobile_small) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &[data-column-count='four'] {
+        grid-template-columns: repeat(4, 1fr);
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: $breakpoint_before_mobile_small) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &[data-column-count='five'] {
+        grid-template-columns: repeat(5, 1fr);
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: $breakpoint_before_mobile_small) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &[data-column-count='six'] {
+        grid-template-columns: repeat(6, 1fr);
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: $breakpoint_before_mobile_small) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // Row count configurations
+    &[data-row-count='two'] {
+        grid-template-rows: repeat(2, 1fr);
+    }
+
+    &[data-row-count='three'] {
+        grid-template-rows: repeat(3, 1fr);
+    }
+
+    &[data-row-count='four'] {
+        grid-template-rows: repeat(4, 1fr);
+    }
+
+    &[data-row-count='five'] {
+        grid-template-rows: repeat(5, 1fr);
+    }
+
+    &[data-row-count='six'] {
+        grid-template-rows: repeat(6, 1fr);
+    }
+
+    // Custom column templates
+    &[data-column-template='sidebar'] {
+        grid-template-columns: 250px 1fr;
+    }
+
+    &[data-column-template='sidebar-wide'] {
+        grid-template-columns: 300px 1fr;
+    }
+
+    &[data-column-template='sidebar-narrow'] {
+        grid-template-columns: 200px 1fr;
+    }
+
+    &[data-column-template='header'] {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    &[data-column-template='footer'] {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    // Custom row templates
+    &[data-row-template='header'] {
+        grid-template-rows: auto 1fr auto;
+    }
+
+    &[data-row-template='sidebar'] {
+        grid-template-rows: auto 1fr auto;
+    }
+
+    &[data-row-template='card'] {
+        grid-template-rows: auto 1fr auto;
+    }
+
+    //basic implementation of gaps:
+    &[data-column-gap='small'][data-column-count='two'] {
+        column-gap: $global_gap_between_columns_small;
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &[data-column-gap='medium'][data-column-count='two'] {
+        column-gap: $global_gap_between_columns_medium;
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &[data-column-gap='large'][data-column-count='two'] {
+        column-gap: $global_gap_between_columns_large;
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &[data-column-gap='small'][data-column-count='three'] {
+        column-gap: $global_gap_between_columns_small;
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &[data-column-gap='medium'][data-column-count='three'] {
+        column-gap: $global_gap_between_columns_medium;
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    &[data-column-gap='large'][data-column-count='three'] {
+        column-gap: $global_gap_between_columns_large;
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            column-gap: $global_gap_between_columns;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        //then later default to full-width to match other columned layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // Responsive grid adjustments for four columns
+    &[data-column-count='four'] {
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    // Responsive grid adjustments for five and six columns
+    &[data-column-count='five'],
+    &[data-column-count='six'] {
+        @media screen and (max-width: $breakpoint_desktop_large) {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            grid-template-columns: 1fr;
+        }
+    }
+}
+
+// Grid specific properties
+*[data-grid-auto-flow='column'] {
+    grid-auto-flow: column;
+}
+
+*[data-grid-auto-flow='row'] {
+    grid-auto-flow: row;
+}
+
+*[data-grid-auto-flow='dense'] {
+    grid-auto-flow: dense;
+}
+
+*[data-justify-items='start'] {
+    justify-items: start;
+}
+
+*[data-justify-items='end'] {
+    justify-items: end;
+}
+
+*[data-justify-items='center'] {
+    justify-items: center;
+}
+
+*[data-justify-items='stretch'] {
+    justify-items: stretch;
+}
+
+*[data-align-items='start'] {
+    align-items: start;
+}
+
+*[data-align-items='end'] {
+    align-items: end;
+}
+
+*[data-align-items='center'] {
+    align-items: center;
+}
+
+*[data-align-items='stretch'] {
+    align-items: stretch;
+}
+
+// Grid item positioning and spanning
+*[data-grid-column='start'] {
+    justify-self: start;
+}
+
+*[data-grid-column='end'] {
+    justify-self: end;
+}
+
+*[data-grid-column='center'] {
+    justify-self: center;
+}
+
+*[data-grid-column='stretch'] {
+    justify-self: stretch;
+}
+
+*[data-grid-row='start'] {
+    align-self: start;
+}
+
+*[data-grid-row='end'] {
+    align-self: end;
+}
+
+*[data-grid-row='center'] {
+    align-self: center;
+}
+
+*[data-grid-row='stretch'] {
+    align-self: stretch;
+}
+
+// Column spanning
+*[data-col-span='2'] {
+    grid-column: span 2;
+}
+
+*[data-col-span='3'] {
+    grid-column: span 3;
+}
+
+*[data-col-span='4'] {
+    grid-column: span 4;
+}
+
+*[data-col-span='5'] {
+    grid-column: span 5;
+}
+
+*[data-col-span='6'] {
+    grid-column: span 6;
+}
+
+// Row spanning
+*[data-row-span='2'] {
+    grid-row: span 2;
+}
+
+*[data-row-span='3'] {
+    grid-row: span 3;
+}
+
+*[data-row-span='4'] {
+    grid-row: span 4;
+}
+
+*[data-row-span='5'] {
+    grid-row: span 5;
+}
+
+*[data-row-span='6'] {
+    grid-row: span 6;
+}
+
+// Grid area positioning
+*[data-grid-area='header'] {
+    grid-area: header;
+}
+
+*[data-grid-area='sidebar'] {
+    grid-area: sidebar;
+}
+
+*[data-grid-area='main'] {
+    grid-area: main;
+}
+
+*[data-grid-area='footer'] {
+    grid-area: footer;
+}
+
+*[data-grid-area='nav'] {
+    grid-area: nav;
+}
+
+*[data-grid-area='content'] {
+    grid-area: content;
+}
+
+// Grid template areas
+*[data-grid-template-areas='header-main-footer'] {
+    grid-template-areas:
+        'header header'
+        'main main'
+        'footer footer';
+}
+
+*[data-grid-template-areas='sidebar-main'] {
+    grid-template-areas: 'sidebar main';
+}
+
+*[data-grid-template-areas='header-sidebar-main-footer'] {
+    grid-template-areas:
+        'header header header'
+        'sidebar main main'
+        'footer footer footer';
+}
+
+// Grid column positioning
+*[data-col-start='1'] {
+    grid-column-start: 1;
+}
+*[data-col-start='2'] {
+    grid-column-start: 2;
+}
+*[data-col-start='3'] {
+    grid-column-start: 3;
+}
+*[data-col-start='4'] {
+    grid-column-start: 4;
+}
+*[data-col-start='5'] {
+    grid-column-start: 5;
+}
+*[data-col-start='6'] {
+    grid-column-start: 6;
+}
+
+*[data-col-end='1'] {
+    grid-column-end: 1;
+}
+*[data-col-end='2'] {
+    grid-column-end: 2;
+}
+*[data-col-end='3'] {
+    grid-column-end: 3;
+}
+*[data-col-end='4'] {
+    grid-column-end: 4;
+}
+*[data-col-end='5'] {
+    grid-column-end: 5;
+}
+*[data-col-end='6'] {
+    grid-column-end: 6;
+}
+
+// Grid row positioning
+*[data-row-start='1'] {
+    grid-row-start: 1;
+}
+*[data-row-start='2'] {
+    grid-row-start: 2;
+}
+*[data-row-start='3'] {
+    grid-row-start: 3;
+}
+*[data-row-start='4'] {
+    grid-row-start: 4;
+}
+*[data-row-start='5'] {
+    grid-row-start: 5;
+}
+*[data-row-start='6'] {
+    grid-row-start: 6;
+}
+
+*[data-row-end='1'] {
+    grid-row-end: 1;
+}
+*[data-row-end='2'] {
+    grid-row-end: 2;
+}
+*[data-row-end='3'] {
+    grid-row-end: 3;
+}
+*[data-row-end='4'] {
+    grid-row-end: 4;
+}
+*[data-row-end='5'] {
+    grid-row-end: 5;
+}
+*[data-row-end='6'] {
+    grid-row-end: 6;
+}
+
+// Gap properties (these work the same in grid)
+*[data-column-gap='none'] {
+    column-gap: 0;
+}
+
+*[data-column-gap='small'] {
+    column-gap: $global_gap_between_columns_small;
+}
+
+*[data-column-gap='medium'] {
+    column-gap: $global_gap_between_columns_medium;
+}
+
+*[data-column-gap='large'] {
+    column-gap: $global_gap_between_columns_large;
+
+    @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+        column-gap: $global_gap_between_columns;
+    }
+}
+
+*[data-row-gap='none'] {
+    row-gap: 0;
+}
+
+*[data-row-gap='small'] {
+    row-gap: $global_gap_between_rows_small;
+}
+
+*[data-row-gap='medium'] {
+    row-gap: $global_gap_between_rows_medium;
+}
+
+*[data-row-gap='large'] {
+    row-gap: $global_gap_between_rows_large;
+}
+
+// Responsive adjustments for spanning elements
+@media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+    *[data-col-span='3'],
+    *[data-col-span='4'],
+    *[data-col-span='5'],
+    *[data-col-span='6'] {
+        grid-column: span 2;
+    }
+}
+
+@media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+    *[data-col-span='2'],
+    *[data-col-span='3'],
+    *[data-col-span='4'],
+    *[data-col-span='5'],
+    *[data-col-span='6'] {
+        grid-column: span 1;
+    }
+}

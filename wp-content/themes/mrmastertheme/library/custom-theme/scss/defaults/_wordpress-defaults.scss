@@ -1,0 +1,9 @@
+//our CSS uses rem units, while WordPress doesn't by default, so we make adjustments to keep it consistent:
+html body #wpadminbar {
+    height: 3.2rem;
+
+    //then the admin bar gets a little taller for mobile, this is WordPress's breakpoint:
+    @media screen and (max-width: $breakpoint_wordpress_adminbar_mobile) {
+        height: 4.6rem;
+    }
+}

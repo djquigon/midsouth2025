@@ -1,0 +1,29 @@
+body {
+    font-family: 'century-gothic', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+
+    h1,
+    .h1,
+    h2,
+    .h2,
+    h3,
+    .h3,
+    h4,
+    .h4,
+    h5,
+    .h5,
+    h6,
+    .h6,
+    p,
+    ul li,
+    ol li,
+    a {
+        font-family: 'century-gothic', sans-serif;
+        font-weight: 400;
+
+        * {
+            font-family: 'century-gothic', sans-serif;
+        }
+    }
+}

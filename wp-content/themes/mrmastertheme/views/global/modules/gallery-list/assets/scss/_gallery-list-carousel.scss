@@ -1,0 +1,42 @@
+section.gallery-list[data-layout='carousel'],
+aside.gallery-list[data-layout='carousel'],
+div.gallery-list[data-layout='carousel'] {
+    //
+
+    .gallery-slide {
+        //
+
+        figure {
+            display: flex;
+            height: 350px;
+            width: 100%;
+
+            a {
+                width: 100%;
+
+                &:hover,
+                &:focus {
+                    //
+                }
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    object-position: center;
+                }
+            }
+        }
+    }
+
+    //any module-specific adjustments needed for the arrows will be made here:
+    div[id*='append-arrows'] {
+        //
+    }
+
+    //any module-specific adjustments needed for the dots will be made here:
+    div[id*='append-dots'] {
+        //
+    }
+}

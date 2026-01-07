@@ -1,0 +1,421 @@
+//Any <section>, <div>, or <aside> that is a direct descendent of a <main> or <article> is assumed to be a module
+main > header,
+main > section,
+main > div,
+main > aside,
+main > nav,
+main > dialog,
+article > header,
+article > section,
+article > div,
+article > aside,
+article > nav,
+article > dialog,
+footer {
+    position: relative;
+    z-index: 1;
+
+    //target any element that features the string '-row' in the class name(s), child elements or the module itself:
+    *[class*='-row'],
+    &[class*='-row'] {
+        position: relative;
+
+        //add top margin to any subsequent row
+        & + div[class*='-row'] {
+            margin-top: $global_margin_between_content_rows;
+
+            //adjust for smaller screen widths:
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                margin-top: $global_margin_between_content_rows_responsive;
+            }
+        }
+
+        //to use the column system, these CSS rules are essential:
+        .columns {
+            max-width: 100%;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            //these are defined in variables/_spacing.scss
+            column-gap: $global_gap_between_columns;
+            row-gap: $global_gap_between_columns;
+
+            //base responsive styling: forcing a wrap & row gap at a certain breakpoint
+            @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                flex-wrap: wrap;
+                row-gap: $global_responsive_gap_between_rows;
+            }
+        }
+
+        //apply various container widths to columns container:
+        &:has(span.row-settings[data-container-width='slim']) .columns,
+        &:has(span.row-settings[data-container-width='slim']) .container {
+            width: $global_container_width_slim;
+
+            @media screen and (max-width: $breakpoint_laptop_large) {
+                width: 100%;
+                padding: $global_container_responsive_left_right_padding;
+            }
+        }
+
+        &:has(span.row-settings[data-container-width='standard']) .columns,
+        &:has(span.row-settings[data-container-width='standard']) .container {
+            width: $global_container_width_standard;
+
+            @media screen and (max-width: $breakpoint_laptop_large) {
+                width: 100%;
+                padding: $global_container_responsive_left_right_padding;
+            }
+        }
+
+        &:has(span.row-settings[data-container-width='wide']) .columns,
+        &:has(span.row-settings[data-container-width='wide']) .container {
+            width: $global_container_width_wide;
+
+            @media screen and (max-width: $breakpoint_laptop_large) {
+                width: 100%;
+                padding: $global_container_responsive_left_right_padding;
+            }
+        }
+
+        &:has(span.row-settings[data-container-width='widest']) .columns,
+        &:has(span.row-settings[data-container-width='widest']) .container {
+            width: $global_container_width_widest;
+            padding: 0;
+
+            &:has(span.container-settings[data-container-padding='true']) {
+                padding: $global_container_responsive_left_right_padding;
+            }
+        }
+
+        &:has(span.row-settings[data-container-padding='true']) .columns,
+        &:has(span.row-settings[data-container-padding='true']) .container {
+            padding: $global_container_responsive_left_right_padding;
+        }
+
+        //apply column widths to various options:
+        &:has(span.row-settings[data-column-count='one']) .columns .column {
+            width: 100%;
+        }
+
+        &:has(span.row-settings[data-column-count='two']) .columns .column {
+            width: calc(50% - calc($global_gap_between_columns / 2));
+
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                width: 100%;
+            }
+        }
+
+        //large column gap - 2 column layout:
+        &:has(
+                span.row-settings[data-column-gap='large'][data-column-count='two']
+            )
+            .columns {
+            column-gap: $global_gap_between_columns_large;
+
+            .column {
+                width: calc(50% - calc($global_gap_between_columns_large / 2));
+            }
+
+            @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                column-gap: $global_gap_between_columns;
+
+                .column {
+                    width: calc(50% - calc($global_gap_between_columns / 2));
+                }
+            }
+
+            //then later default to full-width to match other columned layouts
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                .column {
+                    width: 100%;
+                }
+            }
+        }
+
+        //exceptions for 2-column layouts with variable widths:
+        &:has(
+                span.row-settings[data-column-count='two'][data-column-width='variable']
+            )
+            .columns
+            .column {
+            //
+
+            &.one-third {
+                width: calc(33.33% - calc($global_gap_between_columns / 1.5));
+
+                @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                    width: calc(50% - calc($global_gap_between_columns / 2));
+                }
+
+                @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                    width: 100%;
+                }
+            }
+
+            &.two-thirds {
+                width: calc(66.66% - calc($global_gap_between_columns / 3));
+
+                @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                    width: calc(50% - calc($global_gap_between_columns / 2));
+                }
+
+                @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                    width: 100%;
+                }
+            }
+
+            &.one-fourth {
+                width: calc(25% - calc($global_gap_between_columns / 2));
+
+                @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                    width: calc(50% - calc($global_gap_between_columns / 2));
+                }
+
+                @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                    width: 100%;
+                }
+            }
+
+            &.three-fourths {
+                width: calc(75% - calc($global_gap_between_columns / 2));
+
+                @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                    width: calc(50% - calc($global_gap_between_columns / 2));
+                }
+
+                @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                    width: 100%;
+                }
+            }
+
+            &.one-fifth {
+                width: calc(20% - calc($global_gap_between_columns / 2));
+
+                @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                    width: calc(50% - calc($global_gap_between_columns / 2));
+                }
+
+                @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                    width: 100%;
+                }
+            }
+
+            &.two-fifths {
+                width: calc(40% - calc($global_gap_between_columns / 2));
+
+                @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                    width: calc(50% - calc($global_gap_between_columns / 2));
+                }
+
+                @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                    width: 100%;
+                }
+            }
+
+            &.three-fifths {
+                width: calc(60% - calc($global_gap_between_columns / 2));
+
+                @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                    width: calc(50% - calc($global_gap_between_columns / 2));
+                }
+
+                @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                    width: 100%;
+                }
+            }
+
+            &.four-fifths {
+                width: calc(80% - calc($global_gap_between_columns / 2));
+
+                @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                    width: calc(50% - calc($global_gap_between_columns / 2));
+                }
+
+                @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                    width: 100%;
+                }
+            }
+        }
+
+        //'mobile-reverse' exception for 2-column layouts
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            .columns[data-mobile-reverse-order='true'] {
+                flex-direction: column-reverse;
+            }
+        }
+
+        &:has(span.row-settings[data-column-count='three']) .columns .column {
+            width: calc(33.33% - calc($global_gap_between_columns / 1.5));
+
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                width: 100%;
+            }
+        }
+
+        //for 3-column layouts - tablet view: you may want to change to a 2-column layout, with the final item centered
+        &:has(span.row-settings[data-column-count='three']) .columns {
+            @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                justify-content: center;
+
+                .column {
+                    width: calc(50% - calc($global_gap_between_columns / 2));
+
+                    //maybe you want the final item to be full width?
+                    //&:last-of-type {
+                    //width: 100%;
+                    //}
+                }
+            }
+
+            //then later default to full-width to match other columned layouts
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                .column {
+                    width: 100%;
+                }
+            }
+        }
+
+        &:has(span.row-settings[data-column-count='four']) .columns .column {
+            width: calc(25% - calc($global_gap_between_columns));
+
+            //for 3-column layouts - tablet view: you may want to change to a 2-column layout, with the final item centered
+            @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                width: calc(50% - calc($global_gap_between_columns / 2));
+            }
+
+            //then later default to full-width to match other columned layouts
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                width: 100%;
+            }
+        }
+
+        //For some modules, you may need to use a medium or large column gap:
+
+        //medium column gap - 3 column layout:
+        &:has(
+                span.row-settings[data-column-gap='medium'][data-column-count='three']
+            )
+            .columns {
+            column-gap: $global_gap_between_columns_medium;
+
+            .column {
+                width: calc(
+                    33.33% - calc($global_gap_between_columns_medium / 1.5)
+                );
+            }
+
+            @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                column-gap: $global_gap_between_columns;
+                justify-content: center;
+
+                .column {
+                    width: calc(50% - calc($global_gap_between_columns / 2));
+
+                    //maybe you want the final item to be full width?
+                    //&:last-of-type {
+                    //width: 100%;
+                    //}
+                }
+            }
+
+            //then later default to full-width to match other columned layouts
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                .column {
+                    width: 100%;
+                }
+            }
+        }
+
+        //large column gap - 3 column layout:
+        &:has(
+                span.row-settings[data-column-gap='large'][data-column-count='three']
+            )
+            .columns {
+            column-gap: $global_gap_between_columns_large;
+
+            .column {
+                width: calc(
+                    33.33% - calc($global_gap_between_columns_large / 1.5)
+                );
+            }
+
+            @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                column-gap: $global_gap_between_columns;
+                justify-content: center;
+
+                .column {
+                    width: calc(50% - calc($global_gap_between_columns / 2));
+
+                    //maybe you want the final item to be full width?
+                    //&:last-of-type {
+                    //width: 100%;
+                    //}
+                }
+            }
+
+            //then later default to full-width to match other columned layouts
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                .column {
+                    width: 100%;
+                }
+            }
+        }
+
+        //For some modules, you may need no column gap at all
+        &:has(span.row-settings[data-column-gap='none']) .columns {
+            column-gap: 0;
+        }
+
+        &:has(
+                span.row-settings[data-column-gap='none'][data-column-count='two']
+            )
+            .columns
+            .column {
+            width: 50%;
+
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                width: 100%;
+            }
+        }
+
+        &:has(
+                span.row-settings[data-column-gap='none'][data-column-count='two'][data-column-width='variable']
+            )
+            .columns
+            .column {
+            &.one-third {
+                width: 33.33%;
+
+                @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                    width: 50%;
+                }
+
+                @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                    width: 100%;
+                }
+            }
+
+            &.two-thirds {
+                width: 66.66%;
+
+                @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                    width: 50%;
+                }
+
+                @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                    width: 100%;
+                }
+            }
+
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                width: 100%;
+            }
+        }
+
+        //For some modules, you may need no row gap at all
+        &:has(span.row-settings[data-row-gap='none']) .columns {
+            row-gap: 0;
+        }
+    }
+}

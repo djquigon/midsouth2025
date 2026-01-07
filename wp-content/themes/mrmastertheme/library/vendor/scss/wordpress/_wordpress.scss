@@ -1,0 +1,7 @@
+//In this file, we'll make any necessary adjustments to WordPress' default CSS
+
+@media screen and (max-width: 600px) {
+    #wpadminbar {
+        position: fixed;  
+    }
+}

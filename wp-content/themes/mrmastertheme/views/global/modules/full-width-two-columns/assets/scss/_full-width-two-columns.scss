@@ -1,0 +1,75 @@
+section.full-width-two-columns,
+aside.full-width-two-columns,
+div.full-width-two-columns {
+    //
+
+    &:has(div.columns[data-mobile-reverse-order='true']) {
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            flex-direction: column-reverse;
+        }
+    }
+
+    div.column {
+        position: relative;
+        width: var(--column-width);
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            width: 50%;
+        }
+
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            width: 100%;
+        }
+
+        &[data-column-type='image'] {
+            background-position: center;
+            background-size: cover;
+
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                background: transparent;
+            }
+
+            picture img {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        &[data-column-type='content'] {
+            //
+
+            &:has(span.padding[data-padding-desktop='double']) {
+                padding: $global_module_padding_double;
+            }
+
+            &:has(span.padding[data-padding-desktop='single']) {
+                padding: $global_module_padding_single;
+            }
+
+            &:has(span.padding[data-padding-mobile='double']) {
+                @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                    padding: $global_module_padding_double;
+                }
+            }
+
+            &:has(span.padding[data-padding-mobile='single']) {
+                @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                    padding: $global_module_padding_single;
+                }
+            }
+
+            span.background {
+                background-position: center;
+            }
+        }
+    }
+
+    //fixed-height exception for using 2 image-only columns:
+    div.columns[data-images-only='true'] {
+        min-height: 500px; //using an arbitrary value here
+
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            min-height: 0px;
+        }
+    }
+}

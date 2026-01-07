@@ -1,0 +1,87 @@
+//This stuff was from the old starter theme, and seemed too cool to delete. Overall, we can/should do a much better job of using mixins.
+@mixin css-triangle(
+    $direction: 'down',
+    $width: 20px,
+    $height: 30px,
+    $color: #000
+) {
+    width: 0;
+    height: 0;
+    border-left: $width solid #{setTriangleColor($direction, 'left', $color)};
+    border-right: $width solid #{setTriangleColor($direction, 'right', $color)};
+    border-bottom: $height solid #{setTriangleColor(
+            $direction,
+            'bottom',
+            $color
+        )};
+    border-top: $height solid #{setTriangleColor($direction, 'top', $color)};
+}
+
+@mixin placeholder($color: $text-color, $alpha: 0.8) {
+    &::-webkit-input-placeholder {
+        color: rgba($color, $alpha);
+    } /* WebKit browsers */
+
+    &:-moz-placeholder {
+        color: rgba($color, 1);
+    } /* Mozilla Firefox 4 to 18 */
+
+    &::-moz-placeholder {
+        color: rgba($color, 1);
+    } /* Mozilla Firefox 19+ */
+
+    &:-ms-input-placeholder {
+        color: rgba($color, $alpha);
+    } /* Internet Explorer 10+ */
+}
+
+@mixin section-spacing( $top_space: 'med', $bottom_space: '' ){
+    // Set top padding
+    @if $top_space == 'lg' 
+    {
+        $top_space: $spacing-lg;
+    } 
+    @else if $top_space == 'xl' 
+    {
+        $top_space: $spacing-xl;
+    }
+    @else {
+        $top_space: $spacing-med;
+    }
+
+    // Set bottom padding
+    @if $bottom_space == 'lg' 
+    {
+        $bottom_space: $spacing-lg;
+    } 
+    @else if $bottom_space == 'xl' 
+    {
+        $bottom_space: $spacing-xl;
+    }
+    @else if $bottom_space == 'med' 
+    {
+        $bottom_space: $spacing-med;
+    }
+    @else {
+        $bottom_space: $top_space;
+    }
+
+    // Apply padding
+    padding-top: $top_space;
+    padding-bottom: $bottom_space;
+}
+
+@mixin responsive-spacing(){
+    /*
+    @media (max-width: $breakpoint_tablet_medium_portrait-max){
+        padding-top: $spacing-med;
+        padding-bottom: $spacing-med;
+    }
+    */
+}
+
+// em size
+$doc_font_size: 16;
+@function em($size) {
+    @return #{calc($size / $doc_font_size)}em;
+} 

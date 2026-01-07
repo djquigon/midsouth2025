@@ -1,0 +1,96 @@
+.history-timeline {
+    //
+
+    .container {
+        //
+
+        ol.history-timeline-wrapper {
+            list-style: none;
+            padding: 0;
+
+            li.history-timeline-era {
+                //
+
+                .history-timeline-era-label {
+                    text-align: center;
+
+                    h2 {
+                        //
+                    }
+                }
+
+                ol.history-timeline-era-items {
+                    margin-top: $global_gap_between_rows_large;
+                    list-style: none;
+                    padding: 0;
+
+                    .history-timeline-item {
+                        position: relative;
+                        width: 100%;
+
+                        &.image-left {
+                            //
+
+                            .history-timeline-item-content-wrapper {
+                                // @media (min-width: 1025px) {
+                                flex-direction: row-reverse;
+                                // }
+                            }
+                        }
+
+                        &.image-right {
+                            //
+
+                            .history-timeline-item-content-wrapper {
+                                // @media (min-width: 1025px) {
+                                flex-direction: row;
+                                // }
+                            }
+                        }
+
+                        &.image-right,
+                        &.image-left {
+                            //
+
+                            .history-timeline-item-label {
+                                // @media (min-width: 1024px) {
+                                position: absolute;
+                                top: 50%;
+                                left: 50%;
+                                transform: translate(-50%, -50%);
+                                // }
+                            }
+                        }
+
+                        .history-timeline-item-content-wrapper {
+                            gap: 300px;
+                            // @media (max-width: 1024px) {
+                            //     flex-direction: column;
+                            //     gap: $global_gap_between_rows_large;
+                            // }
+                        }
+
+                        .history-timeline-item-content {
+                            //
+                        }
+
+                        .history-timeline-item-label {
+                            text-align: center;
+
+                            h3 {
+                                //
+                            }
+                        }
+                        .history-timeline-item-image {
+                            //
+
+                            img {
+                                //
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

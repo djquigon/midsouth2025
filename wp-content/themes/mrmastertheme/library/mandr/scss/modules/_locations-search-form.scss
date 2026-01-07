@@ -1,0 +1,40 @@
+section.locations-search-form,
+div.locations-search-form,
+aside.locations-search-form {
+    //
+
+    form#location-search-form ul.form-fields {
+        text-align: center;
+
+        li.search-by-string {
+            position: relative;
+            display: inline-block;
+
+            &:before {
+                content: '';
+                position: absolute;
+                top: 50%;
+                right: 24px;
+                transform: translateY(-50%);
+                width: 16px;
+                height: 16px;
+                background-image: url('../custom-theme/images/icons/chevron-right.svg');
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                z-index: 1;
+                pointer-events: none;
+            }
+
+            input#search-by-string {
+                position: relative;
+                padding: 6px 16px;
+                border: solid 2px $color_grey_dark_mandr;
+            }
+
+            + li.submit-search {
+                margin-top: $global_gap_between_rows_medium;
+            }
+        }
+    }
+}

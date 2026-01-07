@@ -1,0 +1,170 @@
+//this may become irrelevant, or change name to 'columns system', and we just pull the column CSS from standard content
+.container {
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 100%;
+    z-index: 1;
+
+    @media screen and (max-width: $breakpoint_laptop_large) {
+        width: 100%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    //various flex settings:
+    &:has(span.container-settings[data-flex='flex']) {
+        display: flex;
+    }
+
+    &:has(span.container-settings[data-flex-wrap='wrap']) {
+        flex-wrap: wrap;
+    }
+
+    &:has(span.container-settings[data-justify-content='flex-end']) {
+        justify-content: flex-end;
+    }
+
+    &:has(span.container-settings[data-justify-content='space-between']) {
+        justify-content: space-between;
+    }
+
+    &:has(span.container-settings[data-justify-content='center']) {
+        justify-content: center;
+    }
+
+    &:has(span.container-settings[data-align-items='center']) {
+        align-items: center;
+    }
+
+    //width settings:
+    &:has(span.container-settings[data-container-width='slim']) {
+        width: $global_container_width_slim;
+
+        @media screen and (max-width: $breakpoint_laptop_large) {
+            width: 100%;
+            padding: $global_container_responsive_left_right_padding;
+        }
+    }
+
+    &:has(span.container-settings[data-container-width='standard']) {
+        width: $global_container_width_standard;
+
+        @media screen and (max-width: $breakpoint_laptop_large) {
+            width: 100%;
+            padding: $global_container_responsive_left_right_padding;
+        }
+    }
+
+    &:has(span.container-settings[data-container-width='wide']) {
+        width: $global_container_width_wide;
+
+        @media screen and (max-width: $breakpoint_laptop_large) {
+            width: 100%;
+            padding: $global_container_responsive_left_right_padding;
+        }
+    }
+
+    &:has(span.container-settings[data-container-width='widest']) {
+        width: $global_container_width_widest;
+        padding: 0;
+
+        &:has(span.container-settings[data-container-padding='true']) {
+            padding: $global_container_responsive_left_right_padding;
+        }
+    }
+
+    &:has(span.container-settings[data-container-padding='true']) {
+        padding: $global_container_responsive_left_right_padding;
+    }
+
+    &:has(span.container-settings[data-text-align='center']) {
+        text-align: center;
+    }
+
+    //padding settings (for top & bottom, left/right is almost always 5%):
+    //desktop padding settings:
+    &:has(span.padding[data-top-padding-desktop='double']),
+    &:has(span.padding[data-padding-top-desktop='double']) {
+        padding-top: $global_module_padding_double;
+    }
+
+    &:has(span.padding[data-bottom-padding-desktop='double']),
+    &:has(span.padding[data-padding-bottom-desktop='double']) {
+        padding-bottom: $global_module_padding_double;
+    }
+
+    &:has(span.padding[data-top-padding-desktop='single']),
+    &:has(span.padding[data-padding-top-desktop='single']) {
+        padding-top: $global_module_padding_single;
+    }
+
+    &:has(span.padding[data-bottom-padding-desktop='single']),
+    &:has(span.padding[data-padding-bottom-desktop='single']) {
+        padding-bottom: $global_module_padding_single;
+    }
+
+    &:has(span.padding[data-top-padding-desktop='none']),
+    &:has(span.padding[data-padding-top-desktop='none']) {
+        padding-top: 0px;
+    }
+
+    &:has(span.padding[data-bottom-padding-desktop='none']),
+    &:has(span.padding[data-padding-bottom-desktop='none']) {
+        padding-bottom: 0px;
+    }
+
+    //mobile padding settings:
+    &:has(span.padding[data-top-padding-mobile='double']),
+    &:has(span.padding[data-padding-top-mobile='double']) {
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            padding-top: $global_module_padding_double;
+        }
+    }
+
+    &:has(span.padding[data-bottom-padding-mobile='double']),
+    &:has(span.padding[data-padding-bottom-mobile='double']) {
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            padding-bottom: $global_module_padding_double;
+        }
+    }
+
+    &:has(span.padding[data-top-padding-mobile='single']),
+    &:has(span.padding[data-padding-top-mobile='single']) {
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            padding-top: $global_module_padding_single;
+        }
+    }
+
+    &:has(span.padding[data-bottom-padding-mobile='single']),
+    &:has(span.padding[data-padding-bottom-mobile='single']) {
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            padding-bottom: $global_module_padding_single;
+        }
+    }
+
+    &:has(span.padding[data-top-padding-mobile='none']),
+    &:has(span.padding[data-padding-top-mobile='none']) {
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            padding-top: 0;
+        }
+    }
+
+    &:has(span.padding[data-bottom-padding-mobile='none']),
+    &:has(span.padding[data-padding-bottom-mobile='none']) {
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            padding-bottom: 0;
+        }
+    }
+
+    //we need something like this to ensure that the container-settings span does not affect the layout of the container
+    span.container-settings {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: -1;
+    }
+}

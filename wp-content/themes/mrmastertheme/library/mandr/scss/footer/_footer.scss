@@ -1,0 +1,94 @@
+footer {
+    padding-top: $global_module_padding_double;
+    background-color: $color_grey_dark_mandr;
+
+    @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+        div[class*='-row']:has(span.row-settings[data-column-count='three'])
+            .columns
+            .column {
+            width: calc(33.333% - $global_gap_between_columns);
+        }
+    }
+
+    @media screen and (max-width: $breakpoint_tablet_large_portrait) {
+        div[class*='-row']:has(span.row-settings[data-column-count='three'])
+            .columns
+            .column {
+            width: 100%;
+        }
+    }
+
+    @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+        padding-top: $global_module_padding_single;
+    }
+
+    > .content-row {
+        padding-bottom: $global_module_padding_single;
+
+        .columns {
+            text-align: center;
+
+            h2,
+            ul li a {
+                color: #fff;
+            }
+
+            ul li a:hover,
+            ul li a:focus {
+                color: $color_yellow_mandr;
+                text-decoration: underline;
+            }
+
+            div.column:nth-of-type(2) {
+                border-left: solid 2px $color_yellow_mandr;
+                border-right: solid 2px $color_yellow_mandr;
+
+                @media screen and (max-width: $breakpoint_tablet_large_portrait) {
+                    order: -1;
+                    border: none;
+                }
+            }
+
+            ul.social-links {
+                padding-top: 24px;
+                column-gap: 12px;
+
+                > li > a {
+                    display: inline-flex;
+                    justify-content: center;
+                    align-items: center;
+                    width: 48px;
+                    height: 48px;
+                    background-color: $color_yellow_mandr;
+
+                    > i {
+                        color: #000;
+                    }
+
+                    &:hover,
+                    &:focus {
+                        background-color: $color_grey_light_mandr;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+
+    div.copyright {
+        text-align: center;
+        padding: 8px 5%;
+        color: #fff;
+        font-size: 16px;
+
+        a {
+            color: #fff;
+
+            &:hover,
+            &:focus {
+                color: $color_yellow_mandr;
+                text-decoration: underline;
+            }
+        }
+    }
+}

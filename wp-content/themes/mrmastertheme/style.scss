@@ -1,0 +1,67 @@
+/*!
+ * Theme Name: M&R Marketing - Master Theme (2024)
+ * Description: Custom theme
+ * Author: M&R Marketing
+ * Author URI: http://www.mandr-group.com/
+ * Version: 1.0.0 
+*/
+
+//The order in which files are imported matters!
+
+//import all library scss. Due to variable, function, & mixin usage, the sequential order in which these files are imported matters:
+@import 'library/custom-theme/scss/tools/exports';
+@import 'library/custom-theme/scss/variables/exports';
+@import 'library/custom-theme/scss/defaults/exports';
+@import 'library/custom-theme/scss/structural/exports';
+@import 'library/custom-theme/scss/branding/exports';
+@import 'library/custom-theme/scss/exceptions/exports';
+
+//import all vendor scss (slick slider, etc.)
+@import 'library/vendor/scss/exports';
+
+//import global header scss:
+@import 'views/global/header/exports';
+
+//import global Title Area scss:
+@import 'views/global/title-area/assets/scss/title-area';
+
+//import global footer scss:
+@import 'views/global/footer/exports';
+
+//import global modules scss:
+@import 'views/global/modules/exports';
+
+//import global widgets scss:
+@import 'views/global/widgets/exports';
+
+//import Front Page scss:
+@import 'views/conditional/pages/front-page/exports';
+
+//import Blog archive & single scss:
+@import 'views/conditional/posts/archive/exports';
+@import 'views/conditional/posts/single/exports';
+
+//import Location CPT single scss:
+@import 'views/conditional/locations/single/exports';
+
+//import FAQs Page scss:
+@import 'views/conditional/pages/FAQs-page/exports';
+
+//import Resource CPT archive & single scss:
+@import 'views/conditional/resources/archive/exports';
+@import 'views/conditional/resources/single/exports';
+
+//import Gallery CPT archive & single scss:
+@import 'views/conditional/galleries/archive/exports';
+//@import 'views/conditional/galleries/single/exports';
+
+//import Project CPT archive & single scss:
+@import 'views/conditional/projects/archive/exports';
+@import 'views/conditional/projects/single/exports';
+
+//import Team CPT archive & single scss:
+@import 'views/conditional/team/archive/exports';
+@import 'views/conditional/team/single/exports';
+
+//import Testimonials CPT archive scss:
+@import 'views/conditional/testimonials/archive/exports';

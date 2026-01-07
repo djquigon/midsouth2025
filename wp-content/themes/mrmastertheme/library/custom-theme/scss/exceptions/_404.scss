@@ -1,0 +1,35 @@
+#error404 {
+    text-align: center;
+
+    @media (max-width: $breakpoint_tablet_medium_portrait) {
+        padding: 30px 0 30px 0;
+    }
+}
+
+.error404-num {
+    font-size: 250px;
+    line-height: 0.75;
+    text-align: center;
+
+    + h1 {
+        margin-top: 24px;
+    }
+
+    @media (max-width: $breakpoint_tablet_medium_portrait) {
+        font-size: 180px;
+    }
+
+    @media (max-width: $breakpoint_before_mobile_small) {
+        font-size: 150px;
+    }
+}
+
+#error404 hgroup {
+    margin: 0 0 2em 0;
+    padding-top: 50px;
+}
+
+#error404 hgroup h1 {
+    font-size: 3em;
+    margin-bottom: 0.2em;
+}

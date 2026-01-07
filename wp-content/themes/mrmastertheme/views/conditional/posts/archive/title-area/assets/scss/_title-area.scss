@@ -1,0 +1,4 @@
+body.blog section.title-area , 
+body.category section.title-area { 
+    z-index: 9; //to allow for filter form tags drop-down    
+}

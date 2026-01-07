@@ -1,0 +1,35 @@
+nav#primary-nav ul#menu-primary-navigation li.mega-menu > ul.sub-menu > li {
+    width: 25%;
+    border-bottom: none;
+    border-right: solid 1.5px $color_grey_border_mandr;
+
+    &:last-of-type {
+        border-right: none;
+    }
+
+    > a {
+        color: $color_grey_dark_mandr;
+
+        &:hover,
+        &:focus {
+            text-decoration: underline;
+        }
+    }
+
+    > ul.sub-menu > li {
+        padding: 8px 0;
+
+        > a {
+            color: $color_grey_dark_mandr;
+
+            &:hover,
+            &:focus {
+                text-decoration: underline;
+            }
+        }
+
+        &.current-menu-item > a {
+            text-decoration: underline;
+        }
+    }
+}

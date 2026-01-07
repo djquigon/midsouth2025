@@ -1,0 +1,32 @@
+//the order in which you import files really matters!
+
+//import some essentials from the custom-theme, the redundancy won't matter since we toggle this M&R stylesheet off for every site build:
+@import '../custom-theme/scss/tools/exports';
+@import '../custom-theme/scss/variables/breakpoints';
+@import '../custom-theme/scss/variables/colors';
+@import '../custom-theme/scss/variables/spacing';
+@import '../custom-theme/scss/variables/durations';
+
+//start with any files that need to be globally referenced:
+@import 'scss/globals/colors';
+@import 'scss/globals/typography';
+@import 'scss/globals/buttons';
+
+//any header-related files:
+@import 'scss/header/emergency-message';
+@import 'scss/header/primary-menu';
+@import 'scss/header/secondary-menu';
+@import 'scss/header/toggled-menu';
+@import 'scss/header/mega-menu';
+
+//the footer:
+@import 'scss/footer/footer';
+
+//the modules:
+@import 'scss/modules/homepage-title-area';
+@import 'scss/modules/faqs';
+@import 'scss/modules/blog-post-list';
+@import 'scss/modules/gallery-list';
+@import 'scss/modules/project-list';
+@import 'scss/modules/locations-search-form';
+@import 'scss/modules/locations-map-cards';

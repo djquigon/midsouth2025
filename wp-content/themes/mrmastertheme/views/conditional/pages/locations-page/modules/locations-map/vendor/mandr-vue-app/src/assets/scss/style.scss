@@ -1,0 +1,9 @@
+//First, import the SCSS we'll need from the library so that we can use variables, functions, etc.
+@import '../../../../../../../../../../../library/custom-theme/scss/tools/exports';
+@import '../../../../../../../../../../../library/custom-theme/scss/variables/exports';
+@import '../../../../../../../../../../../library/custom-theme/scss/branding/exports';
+
+//import other modularized SCSS files:
+@import 'google-map';
+@import 'location-listings';
+@import 'search-form';

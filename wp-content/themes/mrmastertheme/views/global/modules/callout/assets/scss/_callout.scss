@@ -1,0 +1,125 @@
+section.callout,
+aside.callout,
+div.callout {
+    //
+
+    //module padding - desktop rules
+    &:has(
+            span.module-settings
+                > span.padding
+                [data-top-padding-desktop='double']
+        ),
+    &:has(
+            span.module-settings
+                > span.padding
+                [data-padding-top-desktop='double']
+        ) {
+        padding-top: $global_module_padding_double;
+    }
+
+    &:has(
+            span.module-settings
+                > span.padding[data-bottom-padding-desktop='double']
+        ),
+    &:has(
+            span.module-settings
+                > span.padding[data-padding-bottom-desktop='double']
+        ) {
+        padding-bottom: $global_module_padding_double;
+    }
+
+    &:has(
+            span.module-settings
+                > span.padding[data-top-padding-desktop='single']
+        ),
+    &:has(
+            span.module-settings
+                > span.padding[data-padding-top-desktop='single']
+        ) {
+        padding-top: $global_module_padding_single;
+    }
+
+    &:has(
+            span.module-settings
+                > span.padding[data-bottom-padding-desktop='single']
+        ),
+    &:has(
+            span.module-settings
+                > span.padding[data-padding-bottom-desktop='single']
+        ) {
+        padding-bottom: $global_module_padding_single;
+    }
+
+    //module padding - mobile rules
+    &:has(
+            span.module-settings
+                > span.padding[data-top-padding-mobile='double']
+        ),
+    &:has(
+            span.module-settings
+                > span.padding[data-padding-top-mobile='double']
+        ) {
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            padding-top: $global_module_padding_double;
+        }
+    }
+
+    &:has(
+            span.module-settings
+                > span.padding[data-top-padding-mobile='single']
+        ),
+    &:has(
+            span.module-settings
+                > span.padding[data-padding-top-mobile='single']
+        ) {
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            padding-top: $global_module_padding_single;
+        }
+    }
+
+    &:has(
+            span.module-settings
+                > span.padding[data-bottom-padding-mobile='double']
+        ),
+    &:has(
+            span.module-settings
+                > span.padding[data-padding-bottom-mobile='double']
+        ) {
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            padding-bottom: $global_module_padding_double;
+        }
+    }
+
+    &:has(
+            span.module-settings
+                > span.padding[data-bottom-padding-mobile='single']
+        ),
+    &:has(
+            span.module-settings
+                > span.padding[data-padding-bottom-mobile='single']
+        ) {
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            padding-bottom: $global_module_padding_single;
+        }
+    }
+
+    &:has(span.module-settings > span.padding[data-top-padding-mobile='none']),
+    &:has(span.module-settings > span.padding[data-padding-top-mobile='none']) {
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            padding-top: 1px;
+        }
+    }
+
+    &:has(
+            span.module-settings
+                > span.padding[data-bottom-padding-mobile='none']
+        ),
+    &:has(
+            span.module-settings
+                > span.padding[data-padding-bottom-mobile='none']
+        ) {
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            padding-bottom: 1px;
+        }
+    }
+}
