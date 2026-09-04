@@ -1,0 +1,302 @@
+section.cards-masonry,
+aside.cards-masonry,
+div.cards-masonry {
+    &.background-clear {
+        background: unset !important;
+        h1 {
+            color: $color_gray_blue !important;
+        }
+        .masonry-item-content {
+            background: linear-gradient(
+                180deg,
+                rgba(49, 84, 112, 1) 0%,
+                rgba(40, 51, 74, 1) 100%
+            ) !important;
+        }
+    }
+    background: url(/wp-content/themes/mrmastertheme/library/custom-theme/images/secondary-heaader-bg.png)
+        no-repeat center center;
+    background-size: cover;
+    &:not(.background-clear) {
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: white;
+        }
+        p,
+        ol,
+        ul,
+        li,
+        a:not(.button) {
+            color: white;
+        }
+    }
+    p {
+    }
+    .container {
+        display: flex;
+        gap: 50px;
+
+        @media screen and (max-width: $breakpoint_tablet_large_landscape) {
+            flex-direction: column;
+            gap: 32px;
+        }
+
+        .intro-content {
+            flex: 0 0 350px;
+            max-width: 350px;
+
+            @media screen and (max-width: $breakpoint_tablet_large_landscape) {
+                flex: 0 0 auto;
+                max-width: 100%;
+            }
+        }
+
+        .outro-content {
+            padding-top: 50px;
+        }
+
+        .masonry-items {
+            flex: 1 1 auto;
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-auto-rows: 1fr;
+            gap: 32px;
+            padding-bottom: 40px;
+
+            @media screen and (max-width: 880px) {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                padding-bottom: 0;
+            }
+
+            @media screen and (max-width: $breakpoint_mobile_android_standard) {
+                grid-template-columns: 1fr;
+            }
+
+            &:has(.masonry-item.has-link) {
+                @media screen and (max-width: 550px) {
+                    .has-link {
+                        transform: none;
+                        &:before {
+                            width: 36px;
+                            height: 34px;
+                            background-size:
+                                11px 11px,
+                                36px 34px;
+                        }
+                        &:after {
+                            width: 36px;
+                            height: 34px;
+                            background-size:
+                                11px 11px,
+                                36px 34px;
+                        }
+                    }
+                }
+                @media screen and (max-width: 460px) {
+                    .has-link {
+                        transform: none;
+                        &:before {
+                            width: 30px;
+                            height: 28px;
+                            background-size:
+                                11px 11px,
+                                30px 28px;
+                        }
+                    }
+                    .has-link {
+                        transform: none;
+                        &:after {
+                            width: 30px;
+                            height: 28px;
+                            background-size:
+                                11px 11px,
+                                30px 28px;
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 420px) {
+                    gap: 10px;
+                }
+                @media screen and (max-width: 375px) {
+                    grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
+                    h6 {
+                        font-size: 30px !important;
+                    }
+                    .has-link {
+                        transform: none;
+                        &:before {
+                            width: 56px;
+                            height: 54px;
+                            background-size:
+                                11px 11px,
+                                56px 54px;
+                        }
+                        &:after {
+                            width: 56px;
+                            height: 54px;
+                            background-size:
+                                11px 11px,
+                                56px 54px;
+                        }
+                    }
+                }
+            }
+
+            .masonry-item {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+
+                &:nth-child(3n + 2) {
+                    transform: translateY(40px);
+                }
+
+                @media screen and (max-width: $breakpoint_tablet_large_landscape) {
+                    &:nth-child(3n + 2) {
+                        transform: none;
+                    }
+
+                    &:nth-child(even) {
+                        transform: unset;
+                    }
+                }
+
+                @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                    h6 {
+                        font-size: 22px !important;
+                    }
+                }
+
+                @media screen and (max-width: 485px) {
+                    h6 {
+                        font-size: 16px !important;
+                    }
+                }
+
+                @media screen and (max-width: $breakpoint_mobile_android_standard) {
+                    &:nth-child(even) {
+                        transform: none;
+                    }
+                }
+
+                &:has(.masonry-item-link) {
+                    .masonry-item-content {
+                        mask-image: url(/wp-content/themes/mrmastertheme/library/custom-theme/images/icons/team-member-mask.svg);
+                        mask-size: cover;
+                        mask-position: center;
+                        mask-repeat: no-repeat;
+                        -webkit-mask-image: url(/wp-content/themes/mrmastertheme/library/custom-theme/images/icons/team-member-mask.svg);
+                        -webkit-mask-size: cover;
+                        -webkit-mask-position: center;
+                        -webkit-mask-repeat: no-repeat;
+                    }
+                }
+
+                .masonry-item-content {
+                    display: flex;
+                    flex-direction: column;
+                    width: 100%;
+                    height: 100%;
+                    padding: 32px;
+                    border-radius: 10px;
+                    background: linear-gradient(
+                        180deg,
+                        rgba(49, 84, 112, 0.7) 0%,
+                        rgba(40, 51, 74, 0.7) 100%
+                    );
+                    backdrop-filter: blur(3px);
+
+                    @media screen and (max-width: $breakpoint_tablet_large_landscape) {
+                        padding: 20px;
+                    }
+
+                    h1,
+                    h2,
+                    h3,
+                    h4,
+                    h5,
+                    h6 {
+                        margin-top: 5px;
+                    }
+                }
+
+                &.has-link {
+                    aspect-ratio: 1 / 1;
+
+                    &:before {
+                        content: '';
+                        background-repeat: no-repeat;
+                        position: absolute;
+                        width: 46px;
+                        height: 44px;
+                        bottom: 0;
+                        right: 0;
+                        z-index: 2;
+                        background-image:
+                            url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M4.5 0.707031L9 5.20703L4.5 9.70703" stroke="%2328334A" stroke-width="2"/><path d="M9 5.20703H0" stroke="%2328334A" stroke-width="2"/></svg>'),
+                            url(/wp-content/themes/mrmastertheme/library/custom-theme/images/icons/card-link.svg);
+                        background-position: center, center;
+                        background-size:
+                            11px 11px,
+                            46px 44px;
+                        pointer-events: none;
+                    }
+
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        width: 46px;
+                        height: 44px;
+                        bottom: 0;
+                        right: 0;
+                        z-index: 2;
+                        opacity: 0;
+                        transition: opacity 0.25s ease;
+                        background-image:
+                            url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M4.5 0.707031L9 5.20703L4.5 9.70703" stroke="%2328334A" stroke-width="2"/><path d="M9 5.20703H0" stroke="%2328334A" stroke-width="2"/></svg>'),
+                            url(/wp-content/themes/mrmastertheme/library/custom-theme/images/icons/card-link-hover.svg);
+                        background-repeat: no-repeat;
+                        background-position: center, center;
+                        background-size:
+                            11px 11px,
+                            46px 44px;
+                        pointer-events: none;
+                    }
+
+                    &:hover,
+                    &:focus-within {
+                        &:after {
+                            opacity: 1;
+                        }
+                    }
+
+                    .masonry-item-link {
+                        text-decoration: none;
+
+                        h1,
+                        h2,
+                        h3,
+                        h4,
+                        h5,
+                        h6 {
+                            color: white;
+                        }
+                        p,
+                        ol,
+                        ul,
+                        li,
+                        a:not(.button) {
+                            color: white;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

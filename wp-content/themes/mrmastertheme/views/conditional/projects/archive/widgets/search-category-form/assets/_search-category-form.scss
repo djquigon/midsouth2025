@@ -1,0 +1,150 @@
+form#project-filters {
+    margin: 0 0 0 auto;
+    padding-top: $global_module_padding_double;
+    padding-bottom: $global_module_padding_single;
+
+    @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+        padding-top: $global_module_padding_single;
+        width: 100%;
+    }
+
+    ul.form-fields {
+        position: relative;
+        column-gap: 2%;
+
+        @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+            flex-direction: column !important;
+            gap: 10px !important;
+            align-items: flex-start;
+        }
+
+        li {
+            position: relative;
+            flex: 1;
+
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                width: 100%;
+
+                + li {
+                    margin-top: $global_list_item_bottom_margin;
+                }
+            }
+
+            input,
+            select,
+            button {
+                display: inline-block;
+                width: 100%;
+                max-width: 100%;
+                padding: 0;
+                margin: 0;
+                border: none;
+                background-color: $color_blue_gray_light; //temporary
+                color: $color_navy;
+                font-family: 'Poppins', sans-serif;
+                font-size: 17px;
+                font-style: normal;
+                font-weight: 600;
+                line-height: normal;
+                padding: 12px 24px;
+                text-align: left;
+                border-radius: 10px;
+                min-height: 55px;
+            }
+
+            &.project-filters-title {
+                flex: 1;
+
+                p {
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    color: $color_green_teal;
+                }
+            }
+
+            &.project-filter-submit {
+                flex: unset;
+                width: fit-content;
+
+                input.button {
+                    border-radius: 10px;
+                    padding-left: 75px;
+                    padding-right: 75px;
+                    background: linear-gradient(
+                        96deg,
+                        #f68d2e 15.75%,
+                        #fbdd7a 96.2%
+                    );
+                    clip-path: unset;
+
+                    &:hover,
+                    &:focus {
+                        background: $color_coral;
+                    }
+                }
+
+                &:after {
+                    content: '';
+                    background: url(/wp-content/themes/mrmastertheme/library/custom-theme/images/icons/arrow.svg)
+                        no-repeat center center;
+                    position: absolute;
+                    right: 24px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 18px;
+                    height: 15px;
+                    clip-path: inset(0 0 0 0);
+                }
+
+                &:hover,
+                &:focus {
+                    &:after {
+                        animation: button-arrow-slide 0.5s ease-in-out forwards;
+                    }
+                }
+            }
+
+            //typically we want to override the browser's default arrow styling, & you have to do a strange work-around to accomplish this:
+            &.project-category-filter {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    top: 52%;
+                    right: 0;
+                    padding-right: 20px;
+                    width: 9px;
+                    height: 9px;
+                    transform: translateY(-50%);
+                    background-image: url(/wp-content/themes/mrmastertheme/library/custom-theme/images/icons/filters-chevron.svg);
+                    background-repeat: no-repeat;
+                    background-size: 9px;
+                    background-color: $color_blue_gray_light; //temporary, make this match the background of the <select>
+                    pointer-events: none;
+                }
+
+                //In case the design calls for an 'active' state
+                &:has(select:focus):after {
+                    //transform: translateY(-50%)rotate(180deg);
+                }
+            }
+
+            &.project-filter-clear {
+                margin-top: 20px;
+            }
+
+            &.project-filter-clear {
+                position: absolute;
+                top: 100%;
+                right: 0;
+                width: auto;
+            }
+        }
+    }
+}
+
+.filter-form-container {
+    z-index: 2 !important;
+}

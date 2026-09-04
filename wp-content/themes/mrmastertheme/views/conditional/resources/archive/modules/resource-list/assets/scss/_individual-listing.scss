@@ -1,0 +1,12 @@
+section.resource-list ul.resources > li {
+    //
+
+    figure.default-icon > a {
+        background-color: var(--default-icon-background);
+        padding: 32px;
+    }
+
+    a.popup-video {
+        background-color: transparent;
+    }
+}

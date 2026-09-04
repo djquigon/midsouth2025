@@ -1,0 +1,150 @@
+section.slider,
+aside.slider,
+div.slider {
+    .container {
+        display: flex;
+        align-items: flex-start;
+        gap: 67px;
+        position: relative;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        margin-right: 0 !important;
+        margin-left: 90px !important;
+        width: 1885px !important;
+
+        @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+            flex-direction: column;
+            gap: 32px;
+            margin-left: 0 !important;
+            padding-left: 5% !important;
+        }
+
+        .intro-content {
+            flex: 0 0 472px;
+            max-width: 472px;
+
+            @media screen and (max-width: $breakpoint_tablet_medium_landscape) {
+                flex: 0 0 auto;
+                max-width: 100%;
+                width: 100%;
+                padding-right: 5% !important;
+                br {
+                    display: none;
+                }
+            }
+        }
+
+        .slides-row {
+            flex: 1 1 0;
+            width: 100%;
+            min-width: 0;
+            position: relative;
+            padding-bottom: 72px;
+
+            @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                width: 140%;
+            }
+
+            .slick-track {
+                display: flex !important;
+            }
+
+            .slick-slide {
+                height: inherit !important;
+
+                > div {
+                    height: 100%;
+                }
+
+                &.slick-active {
+                    @media screen and (max-width: $breakpoint_tablet_medium_portrait) {
+                        margin-left: 0;
+                    }
+                }
+            }
+
+            .slick-list {
+                margin-right: -24px;
+            }
+
+            .slide {
+                display: flex;
+                flex-direction: column;
+                height: 100%;
+                padding: 30px;
+                box-sizing: border-box;
+                padding-right: 24px;
+                border-radius: 10px;
+                background: linear-gradient(
+                    180deg,
+                    rgba(49, 84, 112, 0.7) 0%,
+                    rgba(40, 51, 74, 0.7) 100%
+                );
+                backdrop-filter: blur(3px);
+                margin: 0 10px;
+                picture + p {
+                    margin-top: 10px;
+                }
+                strong {
+                    color: $color_yellow_pale;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        .arrows-row {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            z-index: 1;
+
+            .slick-prev,
+            .slick-next {
+                width: 54px;
+                height: 48px;
+                //background-color: $color_coral;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: contain;
+
+                &:before {
+                    content: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11" fill="none"><path d="M4.5 0.707031L9 5.20703L4.5 9.70703" stroke="%2328334A" stroke-width="2"/><path d="M9 5.20703H0" stroke="%2328334A" stroke-width="2"/></svg>');
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    background-image: unset;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+            }
+
+            .slick-prev {
+                background-image: url(/wp-content/themes/mrmastertheme/library/custom-theme/images/icons/slick-prev-mask.svg);
+
+                &:before {
+                    transform: translate(-50%, -50%) scaleX(-1) translateX(3px);
+                }
+                &:hover,
+                &:focus {
+                    transform: scale(1.1);
+                    transition: transform 0.3s ease-in-out;
+                }
+            }
+
+            .slick-next {
+                background-image: url(/wp-content/themes/mrmastertheme/library/custom-theme/images/icons/slick-next-mask.svg);
+
+                &:before {
+                    transform: translate(-50%, -50%) translateX(3px);
+                }
+                &:hover,
+                &:focus {
+                    transform: scale(1.1);
+                    transition: transform 0.3s ease-in-out;
+                }
+            }
+        }
+    }
+}

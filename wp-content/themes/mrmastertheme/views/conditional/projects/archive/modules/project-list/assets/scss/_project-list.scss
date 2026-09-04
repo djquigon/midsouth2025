@@ -1,0 +1,122 @@
+.project-list {
+    padding-top: 0 !important;
+
+    .filter-form-container {
+        padding: 0 !important;
+    }
+
+    ul.projects {
+        > li {
+            > article {
+                display: flex;
+                flex-direction: column;
+
+                > figure {
+                    margin-bottom: 30px;
+                    aspect-ratio: 1 / 1;
+                    max-width: 300px;
+
+                    img,
+                    video,
+                    iframe {
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        aspect-ratio: 1 / 1;
+                        border-radius: 50%;
+                        object-position: center;
+                    }
+                }
+
+                h3 {
+                    margin-bottom: 20px;
+
+                    a {
+                        color: $color_green_teal;
+                        text-decoration: none;
+                    }
+                }
+
+                blockquote {
+                    margin-bottom: 20px;
+                }
+
+                .popup-video,
+                .play-icon {
+                    border-radius: 50%;
+                    aspect-ratio: 1 / 1;
+                }
+
+                .button {
+                    margin-top: 20px;
+                }
+
+                .project-categories {
+                    li {
+                        a {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .post-pagination {
+        padding-top: $global_module_padding_single;
+        display: flex;
+        justify-content: center;
+        ul.page-numbers {
+            gap: 15px;
+            li {
+                a,
+                span {
+                    font-family: 'Poppins', sans-serif;
+                    font-size: 20px;
+                    font-style: normal;
+                    font-weight: 500;
+                    line-height: normal;
+                    color: $color_navy;
+                    text-decoration: none;
+                    &:hover,
+                    &:focus {
+                        text-decoration: underline;
+                    }
+                }
+
+                .current {
+                    text-decoration: underline;
+                }
+
+                .next,
+                .prev {
+                    position: relative;
+                    width: 27px;
+                    height: 28px;
+                    display: inline-block;
+
+                    //hide text
+                    color: transparent;
+                    &:after {
+                        content: '';
+                        position: absolute;
+                        top: 50%;
+                        right: 0;
+                        transform: translateY(-50%);
+                        width: 27px;
+                        height: 28px;
+                        background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" viewBox="0 0 27 27" fill="none"><circle cx="13.5" cy="13.5" r="13.5" fill="url(%23paint0_linear_754_811)"/><path d="M11 9L16 13.5L11 18" stroke="%2328334A" stroke-width="2"/><defs><linearGradient id="paint0_linear_754_811" x1="27" y1="13.5" x2="0" y2="13.5" gradientUnits="userSpaceOnUse"><stop stop-color="%23FBDD7A"/><stop offset="1" stop-color="%23F68D2E"/></linearGradient></defs></svg>');
+                        background-size: contain;
+                        background-repeat: no-repeat;
+                        background-position: center;
+                    }
+                }
+                .prev {
+                    &:after {
+                        left: 0;
+                        transform: translateY(-50%) scaleX(-1);
+                    }
+                }
+            }
+        }
+    }
+}

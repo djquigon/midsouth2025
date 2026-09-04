@@ -1,0 +1,60 @@
+.team-member-single {
+    .breadcrumbs-row {
+        .breadcrumbs {
+            a {
+                font-family: 'Poppins', sans-serif;
+                font-size: 20px;
+                font-style: normal;
+                font-weight: 500;
+                line-height: normal;
+                text-decoration: none;
+                color: $color_navy;
+                &:hover,
+                &:focus {
+                    text-decoration: underline;
+                    text-decoration-color: #f68d2e;
+                    text-underline-offset: 6px;
+                }
+            }
+        }
+    }
+    .team-member-details {
+        .team-member-image-and-bio {
+            gap: 60px;
+            @media screen and (max-width: $breakpoint_before_tablet) {
+                gap: 30px;
+                flex-direction: column-reverse;
+                align-items: center;
+                justify-content: center;
+            }
+            h1 {
+                color: $color_navy;
+            }
+            .team-member-image {
+                flex: 0.35;
+                @media screen and (max-width: $breakpoint_before_tablet) {
+                    flex: 1;
+                    width: 100%;
+                }
+                img {
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 1/1;
+                    object-fit: cover;
+                    object-position: 0px -15px;
+                    border-radius: 50%;
+                }
+            }
+            .team-member-bio {
+                flex: 0.65;
+                @media screen and (max-width: $breakpoint_before_tablet) {
+                    flex: 1;
+                    width: 100%;
+                }
+                .bio-content {
+                    margin-top: 30px;
+                }
+            }
+        }
+    }
+}

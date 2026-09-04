@@ -1,0 +1,2025 @@
+{
+  "layouts": {
+    "layout_67115be28578e": {
+      "label": "Standard Content",
+      "name": "standard_content",
+      "sub_fields": [
+        {
+          "label": "Content",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Rows",
+          "name": "rows",
+          "type": "repeater",
+          "sub_fields": [
+            {
+              "label": "Row Container Width",
+              "name": "container_width",
+              "type": "select"
+            },
+            {
+              "label": "Row Class",
+              "name": "row_class",
+              "type": "text"
+            },
+            {
+              "label": "Include L/R padding?",
+              "name": "include_lr_padding",
+              "type": "true_false"
+            },
+            {
+              "label": "Column Count",
+              "name": "column_count",
+              "type": "select"
+            },
+            {
+              "label": "Column Content",
+              "name": "column_content_single",
+              "type": "wysiwyg"
+            },
+            {
+              "label": "Column Widths",
+              "name": "column_widths",
+              "type": "group",
+              "sub_fields": [
+                {
+                  "label": "",
+                  "name": "dual_column_width_selection",
+                  "type": "select"
+                },
+                {
+                  "label": "Left Column Width",
+                  "name": "left_column_width",
+                  "type": "select"
+                },
+                {
+                  "label": "Right Column Width",
+                  "name": "right_column_width",
+                  "type": "select"
+                }
+              ]
+            },
+            {
+              "label": "Column Content",
+              "name": "column_content_halves_left",
+              "type": "wysiwyg"
+            },
+            {
+              "label": "Column Content",
+              "name": "column_content_halves_right",
+              "type": "wysiwyg"
+            },
+            {
+              "label": "Reverse Order for Mobile Screens?",
+              "name": "reverse_order_mobile",
+              "type": "true_false"
+            },
+            {
+              "label": "Column Content",
+              "name": "column_content_thirds_left",
+              "type": "wysiwyg"
+            },
+            {
+              "label": "Column Content",
+              "name": "column_content_thirds_center",
+              "type": "wysiwyg"
+            },
+            {
+              "label": "Column Content",
+              "name": "column_content_thirds_right",
+              "type": "wysiwyg"
+            },
+            {
+              "label": "Column Content",
+              "name": "column_content_fourths_one",
+              "type": "wysiwyg"
+            },
+            {
+              "label": "Column Content",
+              "name": "column_content_fourths_two",
+              "type": "wysiwyg"
+            },
+            {
+              "label": "Column Content",
+              "name": "column_content_fourths_three",
+              "type": "wysiwyg"
+            },
+            {
+              "label": "Column Content",
+              "name": "column_content_fourths_four",
+              "type": "wysiwyg"
+            }
+          ]
+        },
+        {
+          "label": "Settings",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Tag Type",
+          "name": "tag_type",
+          "type": "select"
+        },
+        {
+          "label": "Unique Identifiers",
+          "name": "unique_identifiers",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "ID",
+              "name": "id",
+              "type": "text"
+            },
+            {
+              "label": "Class Names",
+              "name": "class_names",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "Padding",
+          "name": "padding",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Top Padding (Desktop)",
+              "name": "top_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Top Padding (Mobile)",
+              "name": "top_padding_mobile",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Desktop)",
+              "name": "bottom_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Mobile)",
+              "name": "bottom_padding_mobile",
+              "type": "select"
+            }
+          ]
+        },
+        {
+          "label": "Background",
+          "name": "background",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Background Type",
+              "name": "background_type",
+              "type": "select"
+            },
+            {
+              "label": "Background Color",
+              "name": "background_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Background Image",
+              "name": "background_image",
+              "type": "image"
+            },
+            {
+              "label": "Background Image Position",
+              "name": "background_image_position",
+              "type": "select"
+            },
+            {
+              "label": "Include Overlay?",
+              "name": "include_overlay",
+              "type": "true_false"
+            },
+            {
+              "label": "Overlay Color",
+              "name": "overlay_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Text Color",
+          "name": "text_color",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Heading(s) Color",
+              "name": "headings_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Body Text Color",
+              "name": "body_text_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Color",
+              "name": "link_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Hover Color",
+              "name": "link_hover_color",
+              "type": "color_picker"
+            }
+          ]
+        }
+      ]
+    },
+    "layout_6811667d27132": {
+      "label": "Callout",
+      "name": "callout",
+      "sub_fields": [
+        {
+          "label": "Content",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Content",
+          "name": "content",
+          "type": "wysiwyg"
+        },
+        {
+          "label": "Settings",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Tag Type",
+          "name": "tag_type",
+          "type": "select"
+        },
+        {
+          "label": "Unique Identifiers",
+          "name": "unique_identifiers",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "ID",
+              "name": "id",
+              "type": "text"
+            },
+            {
+              "label": "Class Names",
+              "name": "class_names",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "Module Background",
+          "name": "module_background",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Background Type",
+              "name": "background_type",
+              "type": "select"
+            },
+            {
+              "label": "Background Color",
+              "name": "background_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Background Image",
+              "name": "background_image",
+              "type": "image"
+            },
+            {
+              "label": "Background Image Position",
+              "name": "background_image_position",
+              "type": "select"
+            },
+            {
+              "label": "Include Overlay?",
+              "name": "include_overlay",
+              "type": "true_false"
+            },
+            {
+              "label": "Overlay Color",
+              "name": "overlay_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Module Padding",
+          "name": "module_padding",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Top Padding (Desktop)",
+              "name": "top_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Top Padding (Mobile)",
+              "name": "top_padding_mobile",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Desktop)",
+              "name": "bottom_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Mobile)",
+              "name": "bottom_padding_mobile",
+              "type": "select"
+            }
+          ]
+        },
+        {
+          "label": "Container Width",
+          "name": "container_width",
+          "type": "select"
+        },
+        {
+          "label": "Text Color",
+          "name": "text_color",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Heading(s) Color",
+              "name": "headings_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Body Text Color",
+              "name": "body_text_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Color",
+              "name": "link_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Hover Color",
+              "name": "link_hover_color",
+              "type": "color_picker"
+            }
+          ]
+        }
+      ]
+    },
+    "layout_69d023e8d8d77": {
+      "label": "Background Start",
+      "name": "background_start",
+      "sub_fields": [
+        {
+          "label": "Module Background",
+          "name": "module_background",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Background Type",
+              "name": "background_type",
+              "type": "select"
+            },
+            {
+              "label": "Background Color",
+              "name": "background_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Background Image",
+              "name": "background_image",
+              "type": "image"
+            },
+            {
+              "label": "Background Image Position",
+              "name": "background_image_position",
+              "type": "select"
+            },
+            {
+              "label": "Include Overlay?",
+              "name": "include_overlay",
+              "type": "true_false"
+            },
+            {
+              "label": "Overlay Color",
+              "name": "overlay_color",
+              "type": "color_picker"
+            }
+          ]
+        }
+      ]
+    },
+    "layout_69d0240ed8d9d": {
+      "label": "Background Stop",
+      "name": "background_stop",
+      "sub_fields": [
+        {
+          "label": "",
+          "name": "",
+          "type": "message"
+        }
+      ]
+    },
+    "layout_69d021afd8d4d": {
+      "label": "Content + Video",
+      "name": "content_video",
+      "sub_fields": [
+        {
+          "label": "Content",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Content",
+          "name": "content",
+          "type": "wysiwyg"
+        },
+        {
+          "label": "Video Link",
+          "name": "video_link",
+          "type": "text"
+        },
+        {
+          "label": "Video Description",
+          "name": "video_description",
+          "type": "textarea"
+        },
+        {
+          "label": "Video Thumbnail",
+          "name": "video_thumbnail",
+          "type": "image"
+        },
+        {
+          "label": "Settings",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Tag Type",
+          "name": "tag_type",
+          "type": "select"
+        },
+        {
+          "label": "Unique Identifiers",
+          "name": "unique_identifiers",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "ID",
+              "name": "id",
+              "type": "text"
+            },
+            {
+              "label": "Class Names",
+              "name": "class_names",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "Module Background",
+          "name": "module_background",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Background Type",
+              "name": "background_type",
+              "type": "select"
+            },
+            {
+              "label": "Background Color",
+              "name": "background_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Background Image",
+              "name": "background_image",
+              "type": "image"
+            },
+            {
+              "label": "Background Image Position",
+              "name": "background_image_position",
+              "type": "select"
+            },
+            {
+              "label": "Include Overlay?",
+              "name": "include_overlay",
+              "type": "true_false"
+            },
+            {
+              "label": "Overlay Color",
+              "name": "overlay_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Module Padding",
+          "name": "module_padding",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Top Padding (Desktop)",
+              "name": "top_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Top Padding (Mobile)",
+              "name": "top_padding_mobile",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Desktop)",
+              "name": "bottom_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Mobile)",
+              "name": "bottom_padding_mobile",
+              "type": "select"
+            }
+          ]
+        },
+        {
+          "label": "Text Color",
+          "name": "text_color",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Heading(s) Color",
+              "name": "headings_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Body Text Color",
+              "name": "body_text_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Color",
+              "name": "link_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Hover Color",
+              "name": "link_hover_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Reference",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "",
+          "name": "",
+          "type": "message"
+        }
+      ]
+    },
+    "layout_67915a6f9ac97": {
+      "label": "Toggles",
+      "name": "toggles",
+      "sub_fields": [
+        {
+          "label": "Content",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Intro Content",
+          "name": "intro_content",
+          "type": "wysiwyg"
+        },
+        {
+          "label": "Toggles",
+          "name": "toggles",
+          "type": "repeater",
+          "sub_fields": [
+            {
+              "label": "Title",
+              "name": "title",
+              "type": "text"
+            },
+            {
+              "label": "Content",
+              "name": "content",
+              "type": "wysiwyg"
+            }
+          ]
+        },
+        {
+          "label": "Settings",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Tag Type",
+          "name": "tag_type",
+          "type": "select"
+        },
+        {
+          "label": "Container Width",
+          "name": "container_width",
+          "type": "select"
+        },
+        {
+          "label": "Unique Identifiers",
+          "name": "unique_identifiers",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "ID",
+              "name": "id",
+              "type": "text"
+            },
+            {
+              "label": "Class Names",
+              "name": "class_names",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "Padding",
+          "name": "padding",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Top Padding (Desktop)",
+              "name": "top_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Top Padding (Mobile)",
+              "name": "top_padding_mobile",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Desktop)",
+              "name": "bottom_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Mobile)",
+              "name": "bottom_padding_mobile",
+              "type": "select"
+            }
+          ]
+        },
+        {
+          "label": "Text Color",
+          "name": "text_color",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Heading(s) Color",
+              "name": "headings_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Body Text Color",
+              "name": "body_text_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Color",
+              "name": "link_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Hover Color",
+              "name": "link_hover_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Background",
+          "name": "background",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Background Type",
+              "name": "background_type",
+              "type": "select"
+            },
+            {
+              "label": "Background Color",
+              "name": "background_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Background Image",
+              "name": "background_image",
+              "type": "image"
+            },
+            {
+              "label": "Background Image Position",
+              "name": "background_image_position",
+              "type": "select"
+            },
+            {
+              "label": "Include Overlay?",
+              "name": "include_overlay",
+              "type": "true_false"
+            },
+            {
+              "label": "Overlay Color",
+              "name": "overlay_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Reference",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "",
+          "name": "",
+          "type": "message"
+        }
+      ]
+    },
+    "layout_69d0245ad8da5": {
+      "label": "Cards",
+      "name": "cards",
+      "sub_fields": [
+        {
+          "label": "Content",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Intro Content",
+          "name": "intro_content",
+          "type": "wysiwyg"
+        },
+        {
+          "label": "Cards",
+          "name": "cards",
+          "type": "repeater",
+          "sub_fields": [
+            {
+              "label": "Content",
+              "name": "content",
+              "type": "wysiwyg"
+            }
+          ]
+        },
+        {
+          "label": "Outro Content",
+          "name": "outro_content",
+          "type": "wysiwyg"
+        },
+        {
+          "label": "Settings",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Tag Type",
+          "name": "tag_type",
+          "type": "select"
+        },
+        {
+          "label": "Container Width",
+          "name": "container_width",
+          "type": "select"
+        },
+        {
+          "label": "Unique Identifiers",
+          "name": "unique_identifiers",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "ID",
+              "name": "id",
+              "type": "text"
+            },
+            {
+              "label": "Class Names",
+              "name": "class_names",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "Padding",
+          "name": "padding",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Top Padding (Desktop)",
+              "name": "top_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Top Padding (Mobile)",
+              "name": "top_padding_mobile",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Desktop)",
+              "name": "bottom_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Mobile)",
+              "name": "bottom_padding_mobile",
+              "type": "select"
+            }
+          ]
+        },
+        {
+          "label": "Text Color",
+          "name": "text_color",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Heading(s) Color",
+              "name": "headings_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Body Text Color",
+              "name": "body_text_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Color",
+              "name": "link_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Hover Color",
+              "name": "link_hover_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Background",
+          "name": "background",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Background Type",
+              "name": "background_type",
+              "type": "select"
+            },
+            {
+              "label": "Background Color",
+              "name": "background_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Background Image",
+              "name": "background_image",
+              "type": "image"
+            },
+            {
+              "label": "Background Image Position",
+              "name": "background_image_position",
+              "type": "select"
+            },
+            {
+              "label": "Include Overlay?",
+              "name": "include_overlay",
+              "type": "true_false"
+            },
+            {
+              "label": "Overlay Color",
+              "name": "overlay_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Reference",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "",
+          "name": "",
+          "type": "message"
+        }
+      ]
+    },
+    "layout_69d02531def5d": {
+      "label": "Cards - Links",
+      "name": "cards_links",
+      "sub_fields": [
+        {
+          "label": "Content",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Intro Content",
+          "name": "intro_content",
+          "type": "wysiwyg"
+        },
+        {
+          "label": "Cards",
+          "name": "cards",
+          "type": "repeater",
+          "sub_fields": [
+            {
+              "label": "Content",
+              "name": "content",
+              "type": "wysiwyg"
+            },
+            {
+              "label": "Link",
+              "name": "link",
+              "type": "page_link"
+            }
+          ]
+        },
+        {
+          "label": "Outro Content",
+          "name": "outro_content",
+          "type": "wysiwyg"
+        },
+        {
+          "label": "Settings",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Tag Type",
+          "name": "tag_type",
+          "type": "select"
+        },
+        {
+          "label": "Container Width",
+          "name": "container_width",
+          "type": "select"
+        },
+        {
+          "label": "Unique Identifiers",
+          "name": "unique_identifiers",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "ID",
+              "name": "id",
+              "type": "text"
+            },
+            {
+              "label": "Class Names",
+              "name": "class_names",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "Padding",
+          "name": "padding",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Top Padding (Desktop)",
+              "name": "top_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Top Padding (Mobile)",
+              "name": "top_padding_mobile",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Desktop)",
+              "name": "bottom_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Mobile)",
+              "name": "bottom_padding_mobile",
+              "type": "select"
+            }
+          ]
+        },
+        {
+          "label": "Text Color",
+          "name": "text_color",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Heading(s) Color",
+              "name": "headings_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Body Text Color",
+              "name": "body_text_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Color",
+              "name": "link_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Hover Color",
+              "name": "link_hover_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Background",
+          "name": "background",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Background Type",
+              "name": "background_type",
+              "type": "select"
+            },
+            {
+              "label": "Background Color",
+              "name": "background_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Background Image",
+              "name": "background_image",
+              "type": "image"
+            },
+            {
+              "label": "Background Image Position",
+              "name": "background_image_position",
+              "type": "select"
+            },
+            {
+              "label": "Include Overlay?",
+              "name": "include_overlay",
+              "type": "true_false"
+            },
+            {
+              "label": "Overlay Color",
+              "name": "overlay_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Reference",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "",
+          "name": "",
+          "type": "message"
+        }
+      ]
+    },
+    "layout_69d025cadef7c": {
+      "label": "Cards - Masonry",
+      "name": "cards_masonry",
+      "sub_fields": [
+        {
+          "label": "Content",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Intro Content",
+          "name": "intro_content",
+          "type": "wysiwyg"
+        },
+        {
+          "label": "Cards",
+          "name": "cards",
+          "type": "repeater",
+          "sub_fields": [
+            {
+              "label": "Content",
+              "name": "content",
+              "type": "wysiwyg"
+            }
+          ]
+        },
+        {
+          "label": "Outro Content",
+          "name": "outro_content",
+          "type": "wysiwyg"
+        },
+        {
+          "label": "Settings",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Tag Type",
+          "name": "tag_type",
+          "type": "select"
+        },
+        {
+          "label": "Container Width",
+          "name": "container_width",
+          "type": "select"
+        },
+        {
+          "label": "Unique Identifiers",
+          "name": "unique_identifiers",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "ID",
+              "name": "id",
+              "type": "text"
+            },
+            {
+              "label": "Class Names",
+              "name": "class_names",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "Padding",
+          "name": "padding",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Top Padding (Desktop)",
+              "name": "top_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Top Padding (Mobile)",
+              "name": "top_padding_mobile",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Desktop)",
+              "name": "bottom_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Mobile)",
+              "name": "bottom_padding_mobile",
+              "type": "select"
+            }
+          ]
+        },
+        {
+          "label": "Text Color",
+          "name": "text_color",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Heading(s) Color",
+              "name": "headings_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Body Text Color",
+              "name": "body_text_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Color",
+              "name": "link_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Hover Color",
+              "name": "link_hover_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Background",
+          "name": "background",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Background Type",
+              "name": "background_type",
+              "type": "select"
+            },
+            {
+              "label": "Background Color",
+              "name": "background_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Background Image",
+              "name": "background_image",
+              "type": "image"
+            },
+            {
+              "label": "Background Image Position",
+              "name": "background_image_position",
+              "type": "select"
+            },
+            {
+              "label": "Include Overlay?",
+              "name": "include_overlay",
+              "type": "true_false"
+            },
+            {
+              "label": "Overlay Color",
+              "name": "overlay_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Reference",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "",
+          "name": "",
+          "type": "message"
+        }
+      ]
+    },
+    "layout_6879577958b7c": {
+      "label": "Full-Width: 2 Columns",
+      "name": "full_width_two_columns",
+      "sub_fields": [
+        {
+          "label": "Content",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Left Column",
+          "name": "left_column",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Width",
+              "name": "width",
+              "type": "number"
+            },
+            {
+              "label": "Content Type",
+              "name": "content_type",
+              "type": "select"
+            },
+            {
+              "label": "Background Image",
+              "name": "column_background_image",
+              "type": "image"
+            },
+            {
+              "label": "Column Content",
+              "name": "column_content",
+              "type": "wysiwyg"
+            },
+            {
+              "label": "Content Background",
+              "name": "content_background",
+              "type": "group",
+              "sub_fields": [
+                {
+                  "label": "Background Type",
+                  "name": "background_type",
+                  "type": "true_false"
+                },
+                {
+                  "label": "Background Image",
+                  "name": "background_image",
+                  "type": "image"
+                },
+                {
+                  "label": "Overlay",
+                  "name": "background_image_overlay",
+                  "type": "color_picker"
+                },
+                {
+                  "label": "Color",
+                  "name": "background_color",
+                  "type": "color_picker"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Right Column",
+          "name": "right_column",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Width",
+              "name": "width",
+              "type": "number"
+            },
+            {
+              "label": "Content Type",
+              "name": "content_type",
+              "type": "select"
+            },
+            {
+              "label": "Background Image",
+              "name": "column_background_image",
+              "type": "image"
+            },
+            {
+              "label": "Column Content",
+              "name": "column_content",
+              "type": "wysiwyg"
+            },
+            {
+              "label": "Content Background",
+              "name": "content_background",
+              "type": "group",
+              "sub_fields": [
+                {
+                  "label": "Background Type",
+                  "name": "background_type",
+                  "type": "true_false"
+                },
+                {
+                  "label": "Background Image",
+                  "name": "background_image",
+                  "type": "image"
+                },
+                {
+                  "label": "Overlay",
+                  "name": "background_image_overlay",
+                  "type": "color_picker"
+                },
+                {
+                  "label": "Color",
+                  "name": "background_color",
+                  "type": "color_picker"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "label": "Settings",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Tag Type",
+          "name": "tag_type",
+          "type": "select"
+        },
+        {
+          "label": "Unique Identifiers",
+          "name": "unique_identifiers",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "ID",
+              "name": "id",
+              "type": "text"
+            },
+            {
+              "label": "Class Names",
+              "name": "class_names",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "Reverse Order for Mobile Screens?",
+          "name": "reverse_order_mobile",
+          "type": "true_false"
+        },
+        {
+          "label": "Padding (Content Columns)",
+          "name": "column_content_padding",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Desktop Padding",
+              "name": "padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Mobile Padding",
+              "name": "padding_mobile",
+              "type": "select"
+            }
+          ]
+        },
+        {
+          "label": "Text Color",
+          "name": "text_color",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Heading(s) Color",
+              "name": "headings_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Body Text Color",
+              "name": "body_text_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Color",
+              "name": "link_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Hover Color",
+              "name": "link_hover_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Reference",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "",
+          "name": "",
+          "type": "message"
+        }
+      ]
+    },
+    "layout_685ef3b3eb7b3": {
+      "label": "Slider",
+      "name": "slider",
+      "sub_fields": [
+        {
+          "label": "Content",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Intro Content",
+          "name": "intro_content",
+          "type": "wysiwyg"
+        },
+        {
+          "label": "Slides",
+          "name": "slides",
+          "type": "repeater",
+          "sub_fields": [
+            {
+              "label": "Slide",
+              "name": "slide",
+              "type": "wysiwyg"
+            }
+          ]
+        },
+        {
+          "label": "Settings",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Tag Type",
+          "name": "tag_type",
+          "type": "select"
+        },
+        {
+          "label": "Unique Identifiers",
+          "name": "unique_identifiers",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "ID",
+              "name": "id",
+              "type": "text"
+            },
+            {
+              "label": "Class Names",
+              "name": "class_names",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "Padding",
+          "name": "padding",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Top Padding (Desktop)",
+              "name": "top_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Top Padding (Mobile)",
+              "name": "top_padding_mobile",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Desktop)",
+              "name": "bottom_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Mobile)",
+              "name": "bottom_padding_mobile",
+              "type": "select"
+            }
+          ]
+        },
+        {
+          "label": "Text Color",
+          "name": "text_color",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Heading(s) Color",
+              "name": "headings_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Body Text Color",
+              "name": "body_text_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Color",
+              "name": "link_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Hover Color",
+              "name": "link_hover_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Background",
+          "name": "background",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Background Type",
+              "name": "background_type",
+              "type": "select"
+            },
+            {
+              "label": "Background Color",
+              "name": "background_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Background Image",
+              "name": "background_image",
+              "type": "image"
+            },
+            {
+              "label": "Background Image Position",
+              "name": "background_image_position",
+              "type": "select"
+            },
+            {
+              "label": "Include Overlay?",
+              "name": "include_overlay",
+              "type": "true_false"
+            },
+            {
+              "label": "Overlay Color",
+              "name": "overlay_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Reference",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "",
+          "name": "",
+          "type": "message"
+        }
+      ]
+    },
+    "layout_680ebe25a6d4f": {
+      "label": "Team Members",
+      "name": "team_members",
+      "sub_fields": [
+        {
+          "label": "Team",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Module Title",
+          "name": "module_title",
+          "type": "text"
+        },
+        {
+          "label": "Intro Content",
+          "name": "intro_content",
+          "type": "wysiwyg"
+        },
+        {
+          "label": "Team Members",
+          "name": "team_members",
+          "type": "post_object"
+        },
+        {
+          "label": "'All Team Members' Button",
+          "name": "all_team_members_button",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Button Text",
+              "name": "button_text",
+              "type": "text"
+            },
+            {
+              "label": "Button Link",
+              "name": "button_link",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "Settings",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Bio Options",
+          "name": "bio_options",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Display Full Bio or View Bio Button?",
+              "name": "display_full_bio_or_view_bio_button",
+              "type": "true_false"
+            },
+            {
+              "label": "Bio Button Options",
+              "name": "bio_button_options",
+              "type": "select"
+            }
+          ]
+        },
+        {
+          "label": "Tag Type",
+          "name": "tag_type",
+          "type": "select"
+        },
+        {
+          "label": "Container Width",
+          "name": "container_width",
+          "type": "select"
+        },
+        {
+          "label": "Layout",
+          "name": "layout",
+          "type": "select"
+        },
+        {
+          "label": "Column Count",
+          "name": "column_count",
+          "type": "select"
+        },
+        {
+          "label": "Unique Identifiers",
+          "name": "unique_identifiers",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "ID",
+              "name": "id",
+              "type": "text"
+            },
+            {
+              "label": "Class Names",
+              "name": "class_names",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "Padding",
+          "name": "padding",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Top Padding (Desktop)",
+              "name": "top_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Top Padding (Mobile)",
+              "name": "top_padding_mobile",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Desktop)",
+              "name": "bottom_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Mobile)",
+              "name": "bottom_padding_mobile",
+              "type": "select"
+            }
+          ]
+        },
+        {
+          "label": "Text Color",
+          "name": "text_color",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Heading(s) Color",
+              "name": "headings_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Body Text Color",
+              "name": "body_text_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Color",
+              "name": "link_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Hover Color",
+              "name": "link_hover_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Background",
+          "name": "background",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Background Type",
+              "name": "background_type",
+              "type": "select"
+            },
+            {
+              "label": "Background Color",
+              "name": "background_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Background Image",
+              "name": "background_image",
+              "type": "image"
+            },
+            {
+              "label": "Background Image Position",
+              "name": "background_image_position",
+              "type": "select"
+            },
+            {
+              "label": "Include Overlay?",
+              "name": "include_overlay",
+              "type": "true_false"
+            },
+            {
+              "label": "Overlay Color",
+              "name": "overlay_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Reference",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "",
+          "name": "",
+          "type": "message"
+        }
+      ]
+    },
+    "layout_6717de2f6babd": {
+      "label": "Testimonials",
+      "name": "testimonials",
+      "sub_fields": [
+        {
+          "label": "Content",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Module Title",
+          "name": "module_title",
+          "type": "text"
+        },
+        {
+          "label": "Include Intro Content?",
+          "name": "include_intro_content",
+          "type": "true_false"
+        },
+        {
+          "label": "Intro Content",
+          "name": "intro_content",
+          "type": "wysiwyg"
+        },
+        {
+          "label": "Testimonials",
+          "name": "testimonials",
+          "type": "repeater",
+          "sub_fields": [
+            {
+              "label": "Testimonial",
+              "name": "testimonial",
+              "type": "wysiwyg"
+            },
+            {
+              "label": "Author Name",
+              "name": "author_name",
+              "type": "text"
+            },
+            {
+              "label": "Author Title",
+              "name": "author_title",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "'All Testimonials' Button",
+          "name": "all_testimonials_button",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Button Text",
+              "name": "button_text",
+              "type": "text"
+            },
+            {
+              "label": "Button Link",
+              "name": "button_link",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "Settings",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "Layout",
+          "name": "layout",
+          "type": "select"
+        },
+        {
+          "label": "Column Count",
+          "name": "column_count",
+          "type": "select"
+        },
+        {
+          "label": "Tag Type",
+          "name": "tag_type",
+          "type": "select"
+        },
+        {
+          "label": "Unique Identifiers",
+          "name": "unique_identifiers",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "ID",
+              "name": "id",
+              "type": "text"
+            },
+            {
+              "label": "Class Names",
+              "name": "class_names",
+              "type": "text"
+            }
+          ]
+        },
+        {
+          "label": "Padding",
+          "name": "padding",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Top Padding (Desktop)",
+              "name": "top_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Top Padding (Mobile)",
+              "name": "top_padding_mobile",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Desktop)",
+              "name": "bottom_padding_desktop",
+              "type": "select"
+            },
+            {
+              "label": "Bottom Padding (Mobile)",
+              "name": "bottom_padding_mobile",
+              "type": "select"
+            }
+          ]
+        },
+        {
+          "label": "Background",
+          "name": "background",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Background Type",
+              "name": "background_type",
+              "type": "select"
+            },
+            {
+              "label": "Background Color",
+              "name": "background_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Background Image",
+              "name": "background_image",
+              "type": "image"
+            },
+            {
+              "label": "Background Image Position",
+              "name": "background_image_position",
+              "type": "select"
+            },
+            {
+              "label": "Include Overlay?",
+              "name": "include_overlay",
+              "type": "true_false"
+            },
+            {
+              "label": "Overlay Color",
+              "name": "overlay_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Text Color",
+          "name": "text_color",
+          "type": "group",
+          "sub_fields": [
+            {
+              "label": "Heading(s) Color",
+              "name": "headings_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Body Text Color",
+              "name": "body_text_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Color",
+              "name": "link_color",
+              "type": "color_picker"
+            },
+            {
+              "label": "Link Hover Color",
+              "name": "link_hover_color",
+              "type": "color_picker"
+            }
+          ]
+        },
+        {
+          "label": "Reference",
+          "name": "",
+          "type": "tab"
+        },
+        {
+          "label": "",
+          "name": "",
+          "type": "message"
+        }
+      ]
+    }
+  }
+}
