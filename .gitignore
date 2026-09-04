@@ -29,6 +29,9 @@ wp-content/themes/index.php
 !wp-content/themes/mrmastertheme/
 !wp-content/themes/mrmastertheme/**
 
+!AGENTS.md
+!CLAUDE.md
+
 *.log
 *.sql
 *.sqlite
