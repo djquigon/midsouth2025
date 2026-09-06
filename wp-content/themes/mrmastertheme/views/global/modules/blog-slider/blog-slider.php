@@ -102,9 +102,9 @@ if ($articles) :
                     <figure class="blog-image <?= !$article_featured_image ? 'blog-image--fallback' : '' ?>">
                         <a href="<?= $article_link ?>">
                             <?php if ($article_featured_image) : ?>
-                                <img
-                                    src="<?= $article_featured_image ?>"
-                                    alt="<?= $article_featured_image_alt ?>">
+                                <?php // Perf remediation (item D): responsive srcset + intrinsic dimensions (alt pulled from
+                                // the attachment automatically). Kept eager — this is a slider, so the first slide is visible.
+                                echo get_the_post_thumbnail($article_id, 'large', array('decoding' => 'async')); ?>
                             <?php else : ?>
                                 <img
                                     src="/wp-content/themes/mrmastertheme/library/custom-theme/images/logos/logo.svg"

@@ -140,7 +140,12 @@ if ($eras) :
                                     if ($image) :
                                     ?>
                                         <figure class="history-timeline-item-image">
-                                            <img src="<?= $image['url'] ?>" alt="<?= $image['alt'] ?>">
+                                            <?php // Perf remediation (item D): responsive srcset + intrinsic dimensions + lazy-load (timeline images sit below the fold).
+                                            echo wp_get_attachment_image($image['ID'], 'large', false, array(
+                                                'alt'      => $image['alt'] ?? '',
+                                                'loading'  => 'lazy',
+                                                'decoding' => 'async',
+                                            )); ?>
                                         </figure>
                                     <?php
                                     endif;

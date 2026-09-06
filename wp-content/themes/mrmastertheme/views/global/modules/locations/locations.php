@@ -90,11 +90,16 @@ if ($locations) :
                 <div class="location-card">
                     <a href="<?= esc_url($location_link); ?>" class="location-card-link" aria-label="<?= esc_attr($location_title); ?>"></a>
                     <span class="location-image">
-                        <?php if ($location_image_id) : ?>
-                            <img
-                                src="<?= esc_url($location_image_url) ?>"
-                                alt="<?= esc_attr($location_image_alt) ?>">
-                        <?php endif; ?>
+                        <?php if ($location_image_id) :
+                            // Perf remediation (item D): emit srcset + intrinsic width/height + lazy-loading
+                            // instead of a raw full-size <img>. Grid cards are never the LCP, so lazy is safe;
+                            // width/height also curbs layout shift (CLS).
+                            echo wp_get_attachment_image($location_image_id, 'large', false, array(
+                                'alt'      => $location_image_alt,
+                                'loading'  => 'lazy',
+                                'decoding' => 'async',
+                            ));
+                        endif; ?>
                     </span>
                     <div class="location-content">
                         <h3 class="location-title"><?= esc_html($location_title); ?></h3>

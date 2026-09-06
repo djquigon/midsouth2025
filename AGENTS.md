@@ -261,23 +261,39 @@ item F; there is no WP Simple Pay / Stripe enqueue here, so the Stripe half of i
 
 Tracking the `performance-remediation-prompt.md` playbook.
 
-- **§1 context files** — reconciled `AGENTS.md` + `CLAUDE.md` to this site (this pass). Left for
-  human review + commit.
-- Detection sweep findings already observed (not yet fixed):
-  - **Item E (theme-baked oversized images — highest impact):** `library/custom-theme/images/`
-    contains `team-member-mask.svg` (~12 MB — almost certainly an embedded base64 raster in a mask;
-    rebuild as a shape-only `<path fill="#fff">`), `secondary-heaader-bg.png` (~1.66 MB → WebP), and
-    `gradient-bg.png` (~1.64 MB → CSS `linear-gradient`). Also `dec.svg` (~436 KB) and
-    `featured.jpg` (~448 KB) worth inspecting. (The various `assets/images/screenshot.png` are ACF
-    admin layout thumbnails, not front-end loads.)
-  - **Items A/B (fonts):** Open Sans requested three ways (above) — trim/dedupe with testing.
-  - **Item C (Vimeo SDK):** `enqueues.php` enqueues `player.vimeo.com/api/player.js` globally
-    (in `<head>`) — scope to templates that use it.
-  - **Item F (reCAPTCHA):** Gravity Forms reCAPTCHA loads site-wide — scope off non-form pages
-    (no Stripe/Simple Pay here).
-  - **Item G (render-blocking header JS — PROPOSE ONLY):** `header.min.js` is enqueued in `<head>`;
-    bare inline slider/popup inits prevent a naive `defer`. Leave for a human-approved refactor.
-- **Do not** `git push`. SCSS/asset fixes (item E gradient→CSS, image refs) require a Gulp recompile.
+- **§1 context files** — reconciled `AGENTS.md` + `CLAUDE.md` to this site. Left for human review + commit.
+- **§2 baseline (production, median-of-3):** MOBILE median **35** / DESKTOP median **90**. Worst mobile:
+  auto-loans 23 (TBT 1962ms), contact-us 25 (LCP 13.9s), locations 30 (LCP 22.0s), home 31 (LCP 17.0s).
+  Site-wide **CLS 0.306** on mobile (0.148 desktop). Reports in the perf batch runner's output dir.
+  The real mobile driver is unoptimized `/uploads` images (500–629KB location photos, a 1.7MB home hero),
+  not the theme-baked images — the 12MB mask isn't loaded on the representative pages.
+
+### Fixes applied (step 2 — PHP only, no recompile; validated HTTP 200 + no fatals on local)
+  - **Item F (reCAPTCHA scoping)** — `enqueues.php`: flag `gform_enqueue_scripts`, dequeue
+    `gforms_recaptcha_recaptcha` / `_frontend` / `_frontend-legacy` in `wp_footer` when no GF form rendered.
+    Verified: kept on `/contact-us/` (form), removed from home + `/locations/`.
+  - **Item C (Vimeo SDK scoping)** — `enqueues.php`: only enqueue `player.js` on `is_front_page()` /
+    secondary homepages (the only place `new Vimeo.Player` runs). Verified removed from content pages.
+  - **Item D (responsive/lazy images)** — swapped raw full-size `<img>` for `wp_get_attachment_image()` /
+    `get_the_post_thumbnail()` (srcset + width/height + lazy) in: `modules/locations/locations.php`,
+    `modules/content-video/content-video.php`, `modules/history-timeline/history-timeline.php`,
+    `modules/blog-slider/blog-slider.php` (blog slider kept eager). `cards-images-hover` was already responsive.
+
+### Still to do
+  - **Item E (theme-baked images — asset/SCSS, NEEDS GULP RECOMPILE):** `library/custom-theme/images/`
+    `team-member-mask.svg` (~12 MB → shape-only `<path fill="#fff">`), `secondary-heaader-bg.png`
+    (~1.66 MB → WebP), `gradient-bg.png` (~1.64 MB → CSS `linear-gradient`); inspect `dec.svg` (~436 KB),
+    `featured.jpg` (~448 KB). Lower impact on the measured pages but keep for team pages / where used.
+  - **Site-wide CLS 0.306** — a global cause on every page (unsized hero image or font swap). Investigate.
+  - **Items A/B (fonts):** Open Sans requested three ways — trim/dedupe with testing.
+  - **Item G (render-blocking header JS — PROPOSE ONLY):** `header.min.js` in `<head>`; bare inline
+    slider/popup inits prevent a naive `defer`. Human-approved refactor only.
+  - Remaining item-D cases left intentionally: CSS `background-image:url()` module backgrounds (srcset can't
+    help; Imagify covers compression), small card/slide icons, and the `team-members` component (ties to
+    the item-E mask work).
+- **Do not** `git push`. Item E and any SCSS/asset change require a Gulp recompile of `style.css`.
+- **§6 re-measure** is on hold until the human's Imagify bulk-optimize finishes (it changes the `/uploads`
+  image baseline), then re-run the identical Lighthouse set.
 
 ---
 

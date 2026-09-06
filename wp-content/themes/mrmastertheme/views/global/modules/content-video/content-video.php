@@ -101,7 +101,12 @@ if ($content || $video_link) :
                     <div class="video-wrapper">
                         <?php if ($video_thumbnail) : ?>
                             <a href="<?= $video_link ?>" class="popup-video" aria-label="<?= esc_attr($video_description) ?>">
-                                <img src="<?= $video_thumbnail['url'] ?>" alt="<?= esc_attr($video_thumbnail['alt']) ?>" />
+                                <?php // Perf remediation (item D): responsive srcset + intrinsic dimensions + lazy-load.
+                                echo wp_get_attachment_image($video_thumbnail['ID'], 'large', false, array(
+                                    'alt'      => $video_thumbnail['alt'] ?? '',
+                                    'loading'  => 'lazy',
+                                    'decoding' => 'async',
+                                )); ?>
                             </a>
                         <?php else : ?>
                             <a href="<?= $video_link ?>" class="popup-video" aria-label="<?= esc_attr($video_description) ?>">

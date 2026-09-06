@@ -39,10 +39,31 @@ function my_script()
 	//CSS 
 	wp_enqueue_style('style', get_stylesheet_uri(), false, filemtime(get_stylesheet_directory() . '/style.css'));
     
-    //Vimeo SDK
-	wp_enqueue_script('vimeo-sdk', 'https://player.vimeo.com/api/player.js', null, null, false);
+    //Vimeo SDK — only the homepage video hero uses the Vimeo Player API (title-area.js -> new Vimeo.Player).
+    //Content pages that reference Vimeo only fetch oembed thumbnails (server-side) or open Magnific iframe
+    //popups, neither of which needs player.js. Scoping this to the homepage(s) removes an unused third-party
+    //request from every other page while leaving the hero untouched. (Perf remediation item C.)
+	if (is_front_page() || (is_page() && has_term('secondary-homepage', 'page_category'))) {
+		wp_enqueue_script('vimeo-sdk', 'https://player.vimeo.com/api/player.js', null, null, false);
+	}
 }
 add_action('wp_enqueue_scripts', 'my_script');
+
+// Perf remediation (item F): Gravity Forms reCAPTCHA v3 enqueues its scripts on EVERY front-end page
+// (for cross-page interaction scoring), even on pages with no form — a ~344KB third-party payload.
+// Flag when a Gravity Form actually renders, then dequeue reCAPTCHA in the footer when none did.
+// Form pages (contact-us, loan-application, and any page/popup that renders a GF form) are untouched:
+// gform_enqueue_scripts fires during form render, before wp_footer, so the flag is set in time.
+add_action('gform_enqueue_scripts', function () {
+	$GLOBALS['mr_gravity_form_rendered'] = true;
+});
+add_action('wp_footer', function () {
+	if (empty($GLOBALS['mr_gravity_form_rendered'])) {
+		wp_dequeue_script('gforms_recaptcha_recaptcha');        // https://www.google.com/recaptcha/api.js
+		wp_dequeue_script('gforms_recaptcha_frontend');         // GF >= 2.9
+		wp_dequeue_script('gforms_recaptcha_frontend-legacy');  // older GF
+	}
+}, 1);
 
 //M&R Branding Styles - include only if toggled on in ACF Options tab:
 if (get_field('enable_mandr_theme_styling','options')) {
