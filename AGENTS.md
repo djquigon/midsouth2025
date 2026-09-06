@@ -279,13 +279,27 @@ Tracking the `performance-remediation-prompt.md` playbook.
     `modules/content-video/content-video.php`, `modules/history-timeline/history-timeline.php`,
     `modules/blog-slider/blog-slider.php` (blog slider kept eager). `cards-images-hover` was already responsive.
 
+### Fixes applied (step 2b — NEEDS GULP RECOMPILE; built locally, deploy `style.css` + `footer.min.js`)
+  - **Site-wide CLS 0.306 → ~0.006 (fixed).** Root cause: `header.js` applied the fixed-header spacing
+    (`#main` margin-top = header height, and `header.position='fixed'`) on **`window.load`**, so the page
+    dropped ~252px late (7.3s on home). Fix (Option A): `_header.scss` now sets `#header{position:fixed}`
+    and reserves the space up-front on `main#main { margin-top: var(--header-height, <per-breakpoint default>) }`
+    (defaults 252/222/200; admin-bar variants). `header.js` no longer writes the margin/position on load —
+    it only keeps `--header-height` exact (runs immediately + on resize + via a `ResizeObserver` on `#header`).
+    Verified on local: home CLS 0.306→0.006, contact-us→0.004, with `main` still at y=252 (no overlap/gap).
+  - **Build note:** `header.js` compiles into **`footer.min.js`** (not `header.min.js`) — see gulpfile
+    `compileFooterScripts` (glob `views/global/header/assets/js/*.js`). The theme's `gulp js` task logs
+    "Did you forget to signal async completion?" because `compileScripts()` doesn't return its streams —
+    the files still build (and `gulp watch`/`gulp sass` work fine). Optional one-line gulpfile cleanup:
+    `const compileScripts = gulp.parallel(compileHeaderScripts, compileFooterScripts);`
+
 ### Still to do
   - **Item E (theme-baked images — asset/SCSS, NEEDS GULP RECOMPILE):** `library/custom-theme/images/`
     `team-member-mask.svg` (~12 MB → shape-only `<path fill="#fff">`), `secondary-heaader-bg.png`
     (~1.66 MB → WebP), `gradient-bg.png` (~1.64 MB → CSS `linear-gradient`); inspect `dec.svg` (~436 KB),
     `featured.jpg` (~448 KB). Lower impact on the measured pages but keep for team pages / where used.
-  - **Site-wide CLS 0.306** — a global cause on every page (unsized hero image or font swap). Investigate.
-  - **Items A/B (fonts):** Open Sans requested three ways — trim/dedupe with testing.
+  - **Items A/B (fonts):** Open Sans requested three ways — trim/dedupe with testing. (Also the small
+    residual ~0.005 CLS is font-swap text reflow — trimming/preloading the font would shave it further.)
   - **Item G (render-blocking header JS — PROPOSE ONLY):** `header.min.js` in `<head>`; bare inline
     slider/popup inits prevent a naive `defer`. Human-approved refactor only.
   - Remaining item-D cases left intentionally: CSS `background-image:url()` module backgrounds (srcset can't

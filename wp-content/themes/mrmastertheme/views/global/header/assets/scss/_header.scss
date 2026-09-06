@@ -1,8 +1,9 @@
 #header {
     background-color: #fff;
     box-shadow: 0 0 1rem #8080802b;
-    position: static;
-    //to take care of a specific styling 'bug', we apply fixed positioning with JavaScript at the exact moment we apply a top margin to the <main>
+    // Fixed from first paint. The matching space is reserved on <main> below (via --header-height),
+    // so the page no longer jumps ~252px when the header spacing used to be applied on window.load.
+    position: fixed;
     z-index: 250;
     top: 0;
     left: 0;
@@ -11,6 +12,44 @@
     text-align: center;
 
     transition: opacity 0.3s linear, transform 0.3s linear;
+}
+
+// Reserve space for the fixed header at first paint so content is positioned correctly before any JS
+// runs (fixes the site-wide ~0.30 CLS). The fallback values are close per-breakpoint estimates; the
+// exact height is refined at runtime via the --header-height custom property, set in header.js on
+// DOMContentLoaded and via a ResizeObserver, which also keeps the reservation correct if the emergency
+// bar is toggled or its text wraps.
+main#main {
+    margin-top: var(--header-height, 252px);
+}
+
+@media screen and (min-width: 769px) {
+    main#main {
+        margin-top: var(--header-height, 222px);
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    main#main {
+        margin-top: var(--header-height, 200px);
+    }
+}
+
+// Logged-in admins: the fixed header sits below the WP admin bar, so reserve extra space.
+body.admin-bar main#main {
+    margin-top: var(--header-height-with-adminbar, 298px);
+}
+
+@media screen and (min-width: 783px) {
+    body.admin-bar main#main {
+        margin-top: var(--header-height-with-adminbar, 254px);
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    body.admin-bar main#main {
+        margin-top: var(--header-height-with-adminbar, 232px);
+    }
 }
 
 body.admin-bar #header {

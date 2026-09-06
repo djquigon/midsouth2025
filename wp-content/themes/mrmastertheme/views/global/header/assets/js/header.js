@@ -16,12 +16,14 @@ function fixedHeaderSpacing() {
 
     function headerSetMargin() {
         var header = document.getElementById('header');
-        var primary_wrap = document.getElementById('main');
-        var admin_bar_height = document.getElementById('wpadminbar')
-            ? document.getElementById('wpadminbar').clientHeight
-            : 0;
+        if (!header) return;
+        var admin_bar = document.getElementById('wpadminbar');
+        var admin_bar_height = admin_bar ? admin_bar.clientHeight : 0;
 
-        primary_wrap.style.marginTop = header.clientHeight + 'px';
+        // <main>'s top margin is reserved in CSS (see _header.scss) via these custom properties, and
+        // #header is now position:fixed in CSS. We only keep the reserved height exact here — no more
+        // load-time margin/position write, which is what used to drop the page ~252px on window.load
+        // (the site-wide CLS). Runs immediately + on resize + whenever the header itself changes size.
         document.documentElement.style.setProperty(
             '--header-height',
             header.clientHeight + 'px'
@@ -30,11 +32,17 @@ function fixedHeaderSpacing() {
             '--header-height-with-adminbar',
             header.clientHeight + admin_bar_height + 'px'
         );
-        header.style.position = 'fixed';
     }
 
+    headerSetMargin();
     window.addEventListener('resize', headerSetMargin);
     window.addEventListener('load', headerSetMargin);
+    if (window.ResizeObserver) {
+        var headerEl = document.getElementById('header');
+        if (headerEl) {
+            new ResizeObserver(headerSetMargin).observe(headerEl);
+        }
+    }
 
     var scrollTopVal = $(window).scrollTop();
 
